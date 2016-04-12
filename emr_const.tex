@@ -130,7 +130,7 @@ One is designed to match a multi-anode PMT, when the other one matches a single-
  \centering
  \includegraphics[width=0.95\textwidth]{./clear_fiber_package}
  \caption[A package of clear fibers in a fiber box]{ A package of clear fibers in a fiber box. Multi-anode PMT connector is shown.
- The fiber box for single-anode PMT connector has similar structure. The last 5 fibers are looped in order to have largest possible
+ The fiber box for a single-anode PMT connector has similar structure. The last 5 fibers are looped in order to have largest possible
  bending radius. The bending radius of some of the fibers is indicate in red. The calibration fiber is also shown. }
  \label{fig:clear_fiber_package}
 \end{figure}
@@ -158,7 +158,7 @@ voltage divider and the analog signal is sent outside the detector for digitizat
 A calibration system was installed inside the enclosure of the detector in order to monitor the drift of the gain and the quantum
 efficiency of the PMTs. This system is made of a LED driver distributing light homogeneously to 100 fiber. Each fiber box is
 connected to one of the calibration fibers through a dedicated connector. Inside a fiber box a clear fiber connects the calibration
-fiber to the PMT.
+fiber to the PMT (see Figure \ref{fig:clear_fiber_package}).
 
 All cables inside the detector are feed through four patch-panels. There are 96 high-voltage, 6 low voltage, 48 analog, 48 digital,
 and one configuration cables in total. A support frame is designed to withhold the full weight of the sensitive volume with electronics
@@ -214,7 +214,7 @@ diamond-based polishing paper. The same procedure is applied to the clear fiber 
 
 \subsection{Photodetectors}
 As it was briefly mentioned earlier the EMR has a dual readout. Each scintillator plane is equipped with a multi-anode PMT, which collects
-the light from the individual bars and a single-anode PMT which detects the integrated response of all bars. 
+the light from the individual bars and a single-anode PMT which detects the integrated response of all bars in the plane. 
 \begin{figure}[h]
  \centering
  \includegraphics[width=\textwidth]{./mapmt}
@@ -233,7 +233,7 @@ the light from the individual bars and a single-anode PMT which detects the inte
 
 The multi-anode photo-multiplier tube (MAPMT) is a 64-channel PMT produced by Hamamatsu (model R5900-00-M64~\cite{hamamatsu_mapmt}, see
 Figure~\ref{fig:mapmt}, left). The spectral sensitivity matches to the emission spectrum of the wavelength shifting fiber. It is 
-placed in a $\mu$-metal tube  which serves as additional shielding against the static magnetic filedin. Inside $\mu$-metal tube, the PMT
+placed in a $\mu$-metal tube  which serves as additional shielding against the static magnetic filed. Inside $\mu$-metal tube, the PMT
 is aligned with respect to the fiber connector in such a way that each fiber shines only one
 channel. Therefor it was important to measure all dimensions of the PMT and especially position of the anode matrix with respect to the
 PMT case (Figure~\ref{fig:mapmt}, centre). Figure~\ref{fig:mapmt_dimensions} shows distributions of the measured dimensions (width and
@@ -255,95 +255,116 @@ digital data is kept in local memory buffers and the readout is performed only a
 \begin{figure}[htp!]
  \centering
  \includegraphics[width=\textwidth]{./EMR_electronics_layout}
- \caption[EMR electronics layout.]{EMR electronics layout. {\bf FEB:} front-end board for multi-anode PMT readout. {\bf DBB:} buffer board.
- {\bf MAROC~3:} 64 channel readout ASIC for multi-anode PMT. {\bf MAPMT:} multi-anode PMT. {\bf SAPMT:} single-anode PMT.}
+ \caption[EMR electronics layout.]{EMR electronics layout. {\bf FEB:} front-end board for multi-anode PMT readout. {\bf DBB:} digitizer-buffer
+ board. {\bf MAROC~3:} 64 channel readout ASIC for multi-anode PMT. {\bf MAPMT:} multi-anode PMT. {\bf SAPMT:} single-anode PMT.}
  \label{fig:EMR_electronics_layout}
 \end{figure}
 
 A schematic layout of the EMR electronics is shown in Figure~\ref{fig:EMR_electronics_layout}. The multi-anode PMT connected via a flex cable
-to a front-end board which processes the signal and sends it to a piggy-back buffer board for digitization and storage. The front-end board is
-configured by the VME configuration board, which resides in the VME crate in the control rack. This board is able to configure up to 16 front-end
-boards,therefore three of them are required for the full detector. The buffer boards are readout by groups of six. In each group the first buffer
-board is a master and other five are slaves. All six boards are daisy-chained via ethernet cable and the master is connected to a VME readout
-board, which transfers all the data from the six buffer boards to the DAQ computer. In the whole detector there are 8 groups of buffer boards,
-i.e. 8 VME readout boards are installed in the control rack. 
+to a front-end board (FEB) which processes the signal and sends it to a piggy-back digitizer-buffer board (DBB) for digitization and storage.
+The FEB is configured by the VME configuration board (VCB), which resides in the VME crate in the control rack. This board is able to configure
+up to 16 FEBs, therefore three of them are required for the full detector. The DBBs are readout by groups of six. In each group the first DBB
+is a master and other five are slaves. All six boards are daisy-chained via ethernet cable and the master is connected to a VME readout board
+(VRB), which transfers all the data from the six DBBs to the DAQ computer. In the whole detector there are 8 groups of DBBs, i.e. 8 VRBs are
+installed in the control rack. 
 
-\subsubsection{Front-End and Buffer Boards}
+\subsubsection{Front-End and Digitizer-Buffer Boards}
 \begin{figure}[htp!]
  \centering
  \includegraphics[width=0.8\textwidth]{./feb_dbb}
- \caption[Front-end and buffer board assembly]{Front-end and buffer board assembly.}
+ \caption[Front-end and buffer board assembly]{Front-end and Digitizer-Buffer board assembly.}
  \label{fig:feb_dbb}
 \end{figure}
 
-The multi-anode PMT is readout by a dedicated front-end board equipped with piggy-back buffer board which stores hit information during a spill.
-Figure~\ref{fig:feb_dbb} show the full assembly that is mounted on every plane of the detector. It consists of a PMT attached to a voltage divider
-which is connected to the front-end board through a flex cable. This cable also creates additional pressure between the PMT and fiber connector.
-The front-end board is able to process all 64\footnote{Each EMR plane contains 59 scintillator bars which results in having 5 redundant channels.}
-signals of the MAPMT thanks to 64-channel ASIC\footnote{Application-Specific Integrated Circuit}
-called MAROC\footnote{Multi Anode ReadOut Chip}. The 64 analog signals are feed into the MAROC chip where they are shaped and discriminated.
-The discriminated signals are then forwarded to two high density connectors where buffer board is connected. The width of the discriminated
-signal represents time over threshold measurement. The MAROC ASIC also provides analog measurement - signal charge. This measurement is based
-on a slow shaper and is multiplexed from all the channels and it requires a trigger (either external or internal) to produce a measurement. It 
-takes tens of microseconds (depending on MAROC configuration) to process all the multiplexed signals and this dead time is not acceptable for
-the MICE DAQ duty cycle (a few hundred triggers per 1~ms spill). Therefore only time-over-threshold measurement is used since it is practically
-dead-timeless. The function of the FPGA chip\footnote{Altera Cyclone II (EP2C35F484C8N)} is mainly to forward data from MAROC to the buffer board
-and to send configuration signals from the VME configuration board to the MAROC and verify their status. The board has separate power for analog
-and digital part (both 5~V). The total power consumption of the board is 0.6~Amp.
+The multi-anode PMT is readout by a dedicated front-end board equipped with piggy-back digitizer-buffer board which stores hit information during
+a spill. Figure~\ref{fig:feb_dbb} show the full assembly that is mounted on every plane of the detector. It consists of a PMT attached to a voltage
+divider which is connected to a FEB through a flex cable. This cable also creates additional pressure between the PMT and fiber connector. The FEB
+is able to process all 64\footnote{Each EMR plane contains 59 scintillator bars which results in having 5 redundant channels.} signals of the MAPMT
+thanks to 64-channel ASIC\footnote{Application-Specific Integrated Circuit} called MAROC\footnote{Multi Anode ReadOut Chip}. The 64 analog signals
+are feed into the MAROC chip where they are shaped and discriminated. The discriminated signals are then forwarded to two high density connectors
+where a DBB is connected. The width of the discriminated signal represents a time over threshold measurement. The MAROC ASIC also provides analog
+measurement - signal charge. This measurement is based on a slow shaper and is multiplexed from all the channels and it requires a trigger (either
+external or internal) to produce a measurement. It takes tens of microseconds (depending on MAROC configuration) to process all the multiplexed
+signals and this dead time is not acceptable for the MICE DAQ duty cycle (a few hundred triggers per 1~ms spill). Therefore only time-over-threshold
+measurement is used since it is practically dead-timeless. The function of the FPGA chip\footnote{Altera Cyclone II (EP2C35F484C8N)} is mainly to
+forward data from MAROC to the DBB and to send configuration signals from the VCB to the MAROC and verify their status. The board has separate power
+for analog and digital part (both 5~V). The total power consumption of the board is 0.6~Amp.
 
 
-The two essential roles of the buffer board are to sample the 63 channels (and external trigger) coming from the front-end board and to transmit
-the event data upon request of the acquisition system. The digitization starts when the board receives the Spill Gate signal from an external LEMO
-connector. The number of clock ticks from the begging of the spill to the leading edge and trailing edge of every discriminated signal coming from
-the front-end board is recorded. The difference between the two measurements represents the time over threshold of the original signal. The clock
-sampling rate is 400 MHz ($2.5 \ ns$ resolution). An external trigger is also recorded by the buffer board. The trigger signal is feed into one of
-the 64 input channel and is treated as any other signal. Therefore, only 63 channels are recorded from the front-end board. The board also calculates the width of every spill,
-counts the number of spills, number of triggers in the spills, and number of hits in every channel.
+The two essential roles of the DBB are to sample the 63 channels (and external trigger) coming from the FEB and to transmit the event data upon request
+of the acquisition system. The digitization starts when the board receives the Spill Gate signal from an external LEMO connector. The number of clock
+ticks from the begging of the spill to the leading edge and trailing edge of every discriminated signal coming from the FEB is recorded. The difference
+between the two measurements represents the time over threshold of the original signal. The clock sampling rate is 400 MHz ($2.5 \ ns$ resolution). An
+external trigger is also recorded by the DBB. The trigger signal is feed into one of the 64 input channel and is treated as any other signal. Therefore,
+only 63 channels are recorded from the FEB. The board also calculates the width of every spill, counts the number of spills, number of triggers in the
+spills, and number of hits in every channel.
 
 The general architecture of the DBB is organized around a single FPGA\footnote{Altera Stratix II (EP2S30F484C3N)} that performs the sampling, data
 buffering, and dataflow control functions of the board. Internal memory of the FPGA, configured as FIFO, is used to store the event data which is
 a collection of leading and trailing edge timestamps that occurred on each channel during a specific spill. Two gigabit transceivers\footnote{TLK1501}
 are interfaced to the FPGA to provide the physical transmission channels and form an upstream command link and a downstream data link. Six DBB's are
 grouped together and daisy-chained with upstream and downstream links via ethernet cable. The first DBB in each group is directly connected to the
-acquisition system - the VME readout board - via four coaxial cables.
+acquisition system - the VRB - via four coaxial cables.
 
-\subsubsection{Configuration Board}
-The VME configuration board is a single FPGA\footnote{Altera Cyclone II (EP2C50F484C8N} board designed to perform configuration of the MAROC chip
-on the front-end board. The communication between the boards is realized via LVDS\footnote{Low-Voltage Differential Signaling, communication protocol.}
-signals driven and received by LVDS drivers/receivers directly connected to corresponding FPGA's. As mentioned in the previous section, it can read
-analog signal (charge of the signal from every channel) from the front-end board but it is not implemented in the current design. The board is connected
-to VME bus through which it communicates with the VME controller and the DAQ computer. The MAROC chip is configured by TTL\footnote{Transistor-Transistor
-Logic} signal composed of 830 bits which code the configuration parameters.
+\subsubsection{VME Configuration Board}
+The VCB is a single FPGA\footnote{Altera Cyclone II (EP2C50F484C8N} board designed to perform configuration of the MAROC chip on the FEB. The
+communication between the boards is realized via LVDS\footnote{Low-Voltage Differential Signaling, communication protocol.} signals driven and received
+by LVDS drivers/receivers directly connected to corresponding FPGA's. As mentioned in the previous section, it can read analog signal (charge of the signal
+from every channel) from the FEB but this is not implemented in the current design. The board is connected to VME bus through which it communicates with
+the VME controller and the DAQ computer. The MAROC chip is configured by TTL\footnote{Transistor-Transistor Logic} signal composed of 830 bits which code
+the configuration parameters.
 
 
-\subsection{VME Read-Out Board}\label{electronics:subsec:vme_readout_board}
+\subsubsection{VME Read-Out Board}\label{electronics:subsec:vme_readout_board}
 
-One VME readout board performs the readout of one group of six buffer boards. It is a single FPGA\footnote{Altera Cyclone II (EP2C50F484C8N)} board
-with a gigabit transceiver\footnote{TLK1501} which drives the signals to and from the buffer boards. During the readout cycle the board should store
-the data from 6 buffer boards, therefore it is equipped with four high-speed 16M-bit static RAMs\footnote{IS61WV102416BLL-10TLI - SRAM, 16Mb, 10ns, 48TSOP}
-each organized as 1024K words by 16 bits. It communicates with the DAQ computer via VME bus through the VME controller. Additional LVDS input/output connector
-is available but not used.
+One VRB performs the readout of a group of six DBBs. It is a single FPGA\footnote{Altera Cyclone II (EP2C50F484C8N)} board with a gigabit 
+transceiver\footnote{TLK1501}, which drives the communication with the DBBs and four high-speed 16M-bit static RAMs\footnote{IS61WV102416BLL-10TLI - SRAM,
+16Mbit, 10ns, 48TSOP}, providing a local memory buffer. During the readout cycle, the transfer of the data between the DBBs and the DAQ computer is executed
+in two steps. First, after a request from the DAQ computer, the VRB starts transferring data from the 6 DBBs. The gigabit transceiver is used for this and
+the received data is temporarily stored locally. The four static RAMs, each organized as 16 bits data words, are grouped in two pairs, providing the record of the
+DBB data, which is originally structured in 32 bits data words. Once the first part of the transfer is completed, and all the data accumulated by the 6 DBBs
+during the spill is available in the local memory buffer of the VRB, the DAQ computer sends a second request which triggers the transfer of this data over
+the VME bus.
 
-\subsection{Fast ADC Board}\label{electronics:subsec:fast_adc_board}
+Additional LVDS input/output connector is available at the front pannel of the board. This connector does not have a specific function, and was used mostly
+for debugging.
+
+\subsubsection{Fast ADC Board}\label{electronics:subsec:fast_adc_board}
 
 The Flash ADC Waveform Digitizer made by CAEN~\cite{V1731} is used to readout signals from single-anode PMTs. The ADC has a sampling frequency of 500 M
 samples per second (2~ns resolution timing resolution). A pulse shape of each input signal is digitized by 8 bit ADC and continuously written in a circular
 memory buffer. When a trigger arrives the FPGA writes certain number samples defined by the pre- and post-trigger settings into a buffer which then is
 available for readout via VME bus.
-\newpage
+
+
+\subsection{Mechanics}\label{design:subsec:mechanics}
+
+Total wight of the sensitive volume of the detector is almost 1 tonne. During construction and installation it is required to rotate and move the detector;
+besides that it is meant to be transported in a truck over more then 1000 kilometers. Therefore a reinforced support frame (see Figure~\ref{fig:emr_support})
+was design so that it can withhold the weight of the sensitive detector and all the stress that may happen during the transportation and installation. In its
+final position the EMR is installed in such a way so that planes are located vertically perpendicular to a beam direction. 
+
+\begin{figure}[htp!]
+ \centering 
+ \includegraphics[width=\textwidth]{./emr_support}
+ \caption[EMR support frame]{EMR support frame. When installed in the experimental hall the EMR is integrated into support structure of other detectors.}
+ \label{fig:emr_support}
+\end{figure}
+
+\begin{figure}[htp!]
+ \centering
+ \includegraphics[width=0.9\textwidth]{./internal_dimensions}
+ \caption[EMR dimensions]{EMR dimensions (mm).}
+ \label{fig:internal_dimensions}
+\end{figure}
+
+Figure~\ref{fig:internal_dimensions} shows location of the sensitive volume with respect to the support frame. The frame is covered with panels so that the
+whole volume is light-tight. A panel which faces the beam (see Figure~\ref{fig:internal_dimensions}, right) is made of 5~cm thick iron plates (total wight
+755~kg) and plays a role of global shielding for electronics. The back panel is made of metal profiles and thin aluminum panels. The opening in the shielding
+front panel is closed with a thin wooden end cap and in the back panel - with metal end cap (since it holds the weight of the detector during assembly when
+it is in horizontal position).
 
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
-% 
-% \begin{thebibliography}{99}
-% \bibitem{web} MICE web site {\it http://mice.iit.edu} contains detailed information about the experiment.
-% \bibitem{icool1} D. Neuffer, Part. Accel. 14 (1983) 75;
-% \bibitem{icool2} D. Stratakis et al.. Phys.Rev.ST Accel.Beams 16 (2013) 091001
-% \bibitem{nf} S. Choubey et al., Interim Design Report, arXiv:1112.2853
-% \bibitem{mc} C. M. Ankenbrandt et al.. Phys.Rev.ST Accel.Beams 2 (1999) 081001
-% \bibitem{proposal} The International Muon Ionization Cooling Experiment (MICE) proposal to the Rutherford Appleton Laboratory, 10 January 2003.
-% \bibitem{ids-nf} ] S. Choubey et al., International Design Study for the Neutrino Factory, Interim Design Report, IDS-NF-20 (2011) , arXiv:hep-ex/1112.2853.
-% \bibitem{ruslan} R. Asfandiyarov, Totally active scintillator tracker-calorimeter for the muon ionization cooling
-% experiment, Ph.D. thesis, CERN-THESIS-2014-164, University of Geneva, Geneva Switzerland July 2014.
-% \end{thebibliography}
+
 \end{document}
