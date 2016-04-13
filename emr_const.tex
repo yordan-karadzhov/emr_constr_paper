@@ -1,6 +1,7 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{gensymb}
 
 \setlength{\textwidth}{475pt}
 \setlength{\textheight}{660pt}
@@ -367,20 +368,19 @@ it is in horizontal position).
 
 \section{Construction}\label{sec:construction}
 
-All the construction work of the detector were done at University of Geneva and it involved many steps. As it was mentioned in the previous section the
-scintillator bars were produced at Fermilab. The first step in the construction was to glue wavelength shifting fibers into the bars. 2832 bars are required fro
-building the full detector. 3150 bars were glued and assembled with fiber connectors in order to provide enough spares available.
+All the construction work of the detector was done at University of Geneva. It is well known that exposure to ultra-violet (UV) light or high temperature can
+damage the polystyrene molecules. This is especially important for fibers, because the damage decreases the light transmission. Therefore all activities
+related to fibers and scintillators were performed in a UV clean room, i.e. lights and windows were covered with UV-protective films, with air conditioning
+that kept the temperature around 25 \degree C. 
 
-In the second step, each fiber connector (two per bar) was polished on a dedicated bench equipped with four different diamond sanding papers. Core material of
-fibers and scintillators is polystyrene. It is known that ultra-violet (UV) light and high temperature damaged polystyrene molecules and it becomes less transparent.
-This is especially important for fibers because the damage decreases light transmission. Therefore all activities related to fibers and scintillators were performed
-in a UV clean room, i.e. lights and windows were covered with UV-protective films, with air conditioning that kept temperature around 25 C.
+As it was mentioned in the previous section the scintillator bars were produced at Fermilab. The first step in the construction was to glue the wavelength shifting
+fibers into the bars. Although 2832 bars were required for building the full detector, 3150 bars were glued and assembled with fiber connectors in order to provide
+enough spares available. In the second step, each fiber connector (two per bar) was polished on a dedicated bench equipped with four different diamond sanding papers. 
 
-In parallel with bar gluing fiber bundles (see Figure~\ref{fig:fiber_bundles}) were manufactured. Each fiber bundle is made of 60 clear fibers (clear fibers): 59 - to
-readout scintillator bars and 1 - calibration fiber. Each fiber has an individual length so that when it is connected to a bar the bending radius is minimal. A fiber
-connector (see Figure~\ref{fig:fiber_connectors_cad}, bottom right) is glued at one end of each fiber, at the other end all fibers are glued either in multi-anode or
-single-anode PMT connector. Once glued, both fiber and PMT connectors are polished on a bench similar to one used to polish bar connectors (see
-Figure~\ref{fig:bar_gluing_polishing}, bottom). In total there were 96 fiber bundles (48 for each type of the PMTs).
+Fiber bundles made of 60 clear fibers (see Figure~\ref{fig:fiber_bundles}) were manufactured. In the bundle, each fiber has an
+individual length, providing a minimum bending radius, when connected. A fiber connector (see Figure~\ref{fig:fiber_connectors_cad}, bottom right)
+is glued at one end of each fiber, at the other end all fibers are glued either in multi-anode or single-anode PMT connector. Once glued, both fiber and PMT connectors
+are polished on a bench similar to one used to polish bar connectors. In total there were 96 fiber bundles (48 for each type of the PMTs).
 
 \begin{figure}[htp!]
  \centering
@@ -388,6 +388,66 @@ Figure~\ref{fig:bar_gluing_polishing}, bottom). In total there were 96 fiber bun
  \caption[Clear fiber bundles]{Clear fiber bundles. {\bf Left:} fiber pre-cut to the specified length. {\bf Center:} PMT connector. {\bf Right:} fiber connector.}
  \label{fig:fiber_bundles}
 \end{figure}
+
+\subsection{Quality Tests}\label{construction:subsec:quality_tests}
+
+In order to assure the best possible performance of the detector, numerous quality test were implemented. They are described in the following subsections.
+
+% \begin{figure}[htp!]
+%  \centering
+%  \includegraphics[width=\textwidth]{./bar_test_setup}
+%  \caption[Scintillator bar quality test bench]{Scintillator bar quality test bench. From left to right: LED box, bar connectors, bars attached to the LED box, camera
+%  taking photos of bar connectors.}
+%  \label{fig:bar_test_setup}
+% \end{figure}
+
+Bar quality test bench consists of LED\footnote{Light Emitting Diode} box, 4 scintillator bars and a digital camera placed in a light-tight box.
+% as shown in Figure \ref{fig:bar_test_setup}.
+The LED box contains blue LED, light mixing box and diffusers so that the light is homogeneous at four output holes which are used to attache
+4 bars. The camera takes a photo of four bar connectors. Out of four bars one is a reference and the measurements are normalized to it in order to correct the effect
+of LED instability and to have a possibility to compare different measurements. A program analyzes the photo and calculates light intensity of each bar. Figure
+\ref{fig:measurements} shows distributions of relative residuals of the light intensity\footnote{The difference between the measured value and the average value divided
+by the average.} Only bars with the relative residual intensity above -0.15 were accepted for plane assembly. Out of 3150 tested bars 305 bars (9.7\%) did not pass that
+requirement and were rejected.
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=\textwidth]{./measurements}
+ \caption[Bar quality test measurements]{Bar quality test measurements. {\bf Top left:} an example of one measurement, bottom bar is a reference. {\bf Top right:}
+ values of the relative residual intensity of all 3150 bars. {\bf Bottom left:} distribution of the relative residual intensity. {\bf Bottom right:} values of the relative
+ residual intensity sorted in ascending order.}
+ \label{fig:measurements}
+\end{figure}
+
+Each assembled plane was tested in a similar way as bars. An LED tube attached to a single-anode PMT connector sends light through all the fibers (wavelength shifting and
+clear) all the way up to a multi-anode PMT connector where a camera is setup to take a picture of the PMT mask.
+% (see Figure~\ref{fig:plane_test_setup}).
+During this test not only fiber bundles are verified but also a quality of interconnections between wavelength shifting fiber and clear fiber is tested.
+
+% \begin{figure}[htb]
+%  \centering
+%  \includegraphics[width=0.9\textwidth]{./plane_test_setup}
+%  \caption[Plane quality tests]{Plane quality tests. {\bf Left:} LED tube with blue light to be attached to single-anode PMT connector. {\bf Center:} multi-anode PMT
+%  connector inside shielding. {\bf Left:} PMT mask.}
+%  \label{fig:plane_test_setup}
+% \end{figure}
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.7\textwidth]{./two_planes}
+ \caption[Example of plane quality tests]{Example of plane quality test for two planes. {\bf Left:} PMT mask. {\bf Right:} relative residual intensity values for 60
+ channels, the last value is for a calibration channel.}
+ \label{fig:plane_tests_two_planes}
+\end{figure}
+
+
+
+
+
+
+
+
+
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
 
