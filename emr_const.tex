@@ -30,6 +30,7 @@ commissioning with particle beam.
 \end{abstract}
 
 \section{Introduction}
+\subsection{Ionization cooling}
 The Neutrino Factory based on a high-energy muon storage-ring is the ultimate tool to study the neutrino mixing matrix
 and is established as the best facility to discover, and study the possible leptonic CP violation. It will produce the
 most intense, pure and focused neutrino beam ever achieved and is also the first step towards a $\mu^+ \mu^-$ collider.
@@ -93,7 +94,7 @@ MICE will measure the normalised transverse emittance $\epsilon_N$ with a precis
 $\sigma_{\epsilon_N}/\epsilon_N \sim 0.1 \%$ when $6\%$ cooling effect is  expected for a muon beam with a nominal momentum
 of $200 \ MeV/c$ and 4D normalised emittance $\epsilon_N = 5.8 \ \pi mm \times rad$ is .
 
-\section{Electron-Muon Ranger (EMR)}
+\subsection{Electron-Muon Ranger (EMR)}
 EMR is a fully active scintillator detector. It can be classified as tracking calorimeter, since its granularity allows for track reconstruction.
 The primary purpose of the detector is to distinguish muons from their decay products, rejecting events in which the muon decays in-flight along
 the cooling section \cite{ruslan}.  This allows for the selection of a muon beam with a contamination below 1\%.
@@ -103,7 +104,7 @@ The construction of the detector started in the early 2011 and in October 2013 t
 during one month of a dedicated data-taking at RAL. In 2014 the detector was upgraded, including a replacement of the single-anode
 photo-multiplier tubes and installation of a new high-voltage system.
 
-\subsection{Design}
+\section{Design}
 The EMR is built of triangular scintillator bars arranged in planes. 
 % A drawing of one plane is shown on Figure~\ref{fig:emr_plane}.
 One plane contains 59 bars and covers an area of 1.27~m$^2$. Each even bar is rotated by 180 degrees with respect to the odd one.
@@ -364,6 +365,29 @@ whole volume is light-tight. A panel which faces the beam (see Figure~\ref{fig:i
 front panel is closed with a thin wooden end cap and in the back panel - with metal end cap (since it holds the weight of the detector during assembly when
 it is in horizontal position).
 
+\section{Construction}\label{sec:construction}
+
+All the construction work of the detector were done at University of Geneva and it involved many steps. As it was mentioned in the previous section the
+scintillator bars were produced at Fermilab. The first step in the construction was to glue wavelength shifting fibers into the bars. 2832 bars are required fro
+building the full detector. 3150 bars were glued and assembled with fiber connectors in order to provide enough spares available.
+
+In the second step, each fiber connector (two per bar) was polished on a dedicated bench equipped with four different diamond sanding papers. Core material of
+fibers and scintillators is polystyrene. It is known that ultra-violet (UV) light and high temperature damaged polystyrene molecules and it becomes less transparent.
+This is especially important for fibers because the damage decreases light transmission. Therefore all activities related to fibers and scintillators were performed
+in a UV clean room, i.e. lights and windows were covered with UV-protective films, with air conditioning that kept temperature around 25 C.
+
+In parallel with bar gluing fiber bundles (see Figure~\ref{fig:fiber_bundles}) were manufactured. Each fiber bundle is made of 60 clear fibers (clear fibers): 59 - to
+readout scintillator bars and 1 - calibration fiber. Each fiber has an individual length so that when it is connected to a bar the bending radius is minimal. A fiber
+connector (see Figure~\ref{fig:fiber_connectors_cad}, bottom right) is glued at one end of each fiber, at the other end all fibers are glued either in multi-anode or
+single-anode PMT connector. Once glued, both fiber and PMT connectors are polished on a bench similar to one used to polish bar connectors (see
+Figure~\ref{fig:bar_gluing_polishing}, bottom). In total there were 96 fiber bundles (48 for each type of the PMTs).
+
+\begin{figure}[htp!]
+ \centering
+ \includegraphics[width=\textwidth]{./fiber_bundles}
+ \caption[Clear fiber bundles]{Clear fiber bundles. {\bf Left:} fiber pre-cut to the specified length. {\bf Center:} PMT connector. {\bf Right:} fiber connector.}
+ \label{fig:fiber_bundles}
+\end{figure}
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
 
