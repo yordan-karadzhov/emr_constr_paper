@@ -51,7 +51,7 @@ i.e the muon must be “cooled”, so that the beam can be accelerated efficient
 
 Ionization cooling \cite{icool1} (Fig.\ \ref{icool}) provides the only practical solution to this problem,
 because it is fast enough to cool the beam within the muon lifetime ($\tau_\mu \sim 2.2 \ \mu s$). The cooling effect is
-accomplished by passing the muons through a low-Z materiall (\textquotedblleft absorber\textquotedblright), in which they
+accomplished by passing the muons through a low-Z material (\textquotedblleft absorber\textquotedblright), in which they
 loses energy via ionization, reducing both the longitudinal and the transverse components of momentum. Later the longitudinal
 momentum is restored by accelerating cavities. The net effect is a reduction of the beam emittance. To maximize cooling
 we need the absorber to be placed at a position where the transverse momentum $P_T$
@@ -93,7 +93,7 @@ as a preshower for the totally-active Electron-Muon ranger (EMR), situated behin
 
 MICE will measure the normalised transverse emittance $\epsilon_N$ with a precision of 
 $\sigma_{\epsilon_N}/\epsilon_N \sim 0.1 \%$ when $6\%$ cooling effect is  expected for a muon beam with a nominal momentum
-of $200 \ MeV/c$ and 4D normalised emittance $\epsilon_N = 5.8 \ \pi mm \times rad$ is .
+of $200 \ MeV/c$ and 4D normalised emittance $\epsilon_N = 5.8 \ \pi~mm~rad$.
 
 \subsection{Electron-Muon Ranger (EMR)}
 EMR is a fully active scintillator detector. It can be classified as tracking calorimeter, since its granularity allows for track
@@ -182,15 +182,15 @@ and it is around 17 photo-electrons.
 
 The WLS fiber glued inside the bar is a double cladding 1.2~mm in diameter fiber, produced by Saint-Gobain Crystals~\cite{saintgobain}.
 The core material of the fiber is polystyrene with acrylic cladding. It has very large numerical aperture of 0.58 compared to 0.2-0.3
-of graded-index multimode fiber used in data communications. Trapping efficiency is 3.5\%. The light is absorbed in blue part of a visible
+of graded-index multi-mode fiber used in data communications. Trapping efficiency is 3.5\%. The light is absorbed in blue part of a visible
 spectrum and re-emitted in green. 
 
 The clear fiber, used to transfer light from the ends of scintillator bar to the PMTs, is a 1.5mm multi-cladding fiber produced by 
 Kuraray~\cite{kuraray} with special structure (S-type) that allows for better rigidity against bending. The aperture of this fiber matches
 to the one of WLS fiber so that insertion loss is minimal.
 
-A special connector was designed to couple the clear fiber to the WLS fiber(see Figure~\ref{fig:fiber_connectors_cad}). It has a small
-cylindrical enlargement which is meant to be filled with glue to fix the fiber in the connector. Thanks to that configuration it is possible
+A special connector was designed to couple the clear fiber to the WLS fiber (see Figure~\ref{fig:fiber_connectors_cad}). It has a small
+cylindrical enlargement which is meant to be filled with glue to fix the fiber in the connector. This configuration helps
 to avoid crimping the fiber since a sharp edge of the connector would easily damage it. As shown in Figure~\ref{fig:fiber_connectors_cad}
 the retaining clip (B) is screwed into the wavelength shifting fiber connector (A) so that clear fiber connector can be easily and safely
 attached. All these peaces are non-standard and could not be found on a market, therefore a special mold was designed to produce them using
@@ -214,7 +214,7 @@ Both faces of the bar's fiber connectors are polished with a special polishing m
 achieve a mirror like quality of the polished surfaces. The last step is performed using a 1$\mu$m grade diamond-based polishing paper. The
 same procedure is applied to the clear fiber connectors and PMT connectors (see Figure~\ref{fig:pmt_connectors}).
 
-\subsection{Photodetectors}
+\subsection{Photo-detectors}
 As it was briefly mentioned earlier the EMR has a dual readout. Each scintillator plane is equipped with a multi-anode PMT, which collects
 the light from the individual bars and a single-anode PMT which detects the integrated response of all bars in the plane. 
 \begin{figure}[h]
@@ -235,8 +235,8 @@ the light from the individual bars and a single-anode PMT which detects the inte
 
 The multi-anode photo-multiplier tube (MAPMT) is a 64-channel PMT produced by Hamamatsu (model R5900-00-M64~\cite{hamamatsu_mapmt}, see
 Figure~\ref{fig:mapmt}, left). The spectral sensitivity matches to the emission spectrum of the wavelength shifting fiber. It is 
-placed in a $\mu$-metal tube  which serves as additional shielding against the static magnetic filed. Inside $\mu$-metal tube, the PMT
-is aligned with respect to the fiber connector in such a way that each fiber shines only one
+placed in a $\mu$-metal tube  which serves as additional shielding against the static magnetic filed. Inside the $\mu$-metal tube,
+the PMT is aligned with respect to the fiber connector in such a way that each fiber shines only one
 channel. Therefor it was important to measure all dimensions of the PMT and especially position of the anode matrix with respect to the
 PMT case (Figure~\ref{fig:mapmt}, centre). Figure~\ref{fig:mapmt_dimensions} shows distributions of the measured dimensions (width and
 height) and displacements of the anode matrix for 53 MAPMTs. It was found that on average the matrix is shifted by 0.5~mm upwards (see
@@ -266,7 +266,7 @@ A schematic layout of the EMR electronics is shown in Figure~\ref{fig:EMR_electr
 to a front-end board (FEB) which processes the signal and sends it to a piggy-back digitizer-buffer board (DBB) for digitization and storage.
 The FEB is configured by the VME configuration board (VCB), which resides in the VME crate in the control rack. This board is able to configure
 up to 16 FEBs, therefore three of them are required for the full detector. The DBBs are readout by groups of six. In each group the first DBB
-is a master and other five are slaves. All six boards are daisy-chained via ethernet cable and the master is connected to a VME readout board
+is a master and the other five are slaves. All six boards are daisy-chained via ethernet cable and the master is connected to a VME readout board
 (VRB), which transfers all the data from the six DBBs to the DAQ computer. In the whole detector there are 8 groups of DBBs, i.e. 8 VRBs are
 installed in the control rack. 
 
@@ -278,8 +278,8 @@ installed in the control rack.
  \label{fig:feb_dbb}
 \end{figure}
 
-The multi-anode PMT is readout by a dedicated front-end board equipped with piggy-back digitizer-buffer board which stores hit information during
-a spill. Figure~\ref{fig:feb_dbb} show the full assembly that is mounted on every plane of the detector. It consists of a PMT attached to a voltage
+The multi-anode PMT is readout by a dedicated front-end board equipped with piggy-back digitizer-buffer board \cite{Bolognini2011108}, which stores hit information
+during a spill. Figure~\ref{fig:feb_dbb} show the full assembly that is mounted on every plane of the detector. It consists of a PMT attached to a voltage
 divider which is connected to a FEB through a flex cable. This cable also creates additional pressure between the PMT and fiber connector. The FEB
 is able to process all 64\footnote{Each EMR plane contains 59 scintillator bars which results in having 5 redundant channels.} signals of the MAPMT
 thanks to 64-channel ASIC\footnote{Application-Specific Integrated Circuit} called MAROC\footnote{Multi Anode ReadOut Chip}. The 64 analog signals
@@ -289,32 +289,34 @@ measurement - signal charge. This measurement is based on a slow shaper and is m
 external or internal) to produce a measurement. It takes tens of microseconds (depending on MAROC configuration) to process all the multiplexed
 signals and this dead time is not acceptable for the MICE DAQ duty cycle (a few hundred triggers per 1~ms spill). Therefore only time-over-threshold
 measurement is used since it is practically dead-timeless. The function of the FPGA chip\footnote{Altera Cyclone II (EP2C35F484C8N)} is mainly to
-forward data from MAROC to the DBB and to send configuration signals from the VCB to the MAROC and verify their status. The board has separate power
-for analog and digital part (both 5~V). The total power consumption of the board is 0.6~Amp.
+forward data from MAROC to the DBB and to send configuration signals from the VCB to the MAROC and verify their status. The board has a separate
+power for analog and por the digital parts (both 5~V). The total power consumption of the board is 0.6~Amp.
 
 
-The two essential roles of the DBB are to sample the 63 channels (and external trigger) coming from the FEB and to transmit the event data upon
-request of the acquisition system. The digitization starts when the board receives the Spill Gate signal from an external LEMO connector. The
-number of clock ticks from the begging of the spill to the leading edge and trailing edge of every discriminated signal coming from the FEB is
-recorded. The difference between the two measurements represents the time over threshold of the original signal. The clock sampling rate is 400
-MHz ($2.5 \ ns$ resolution). An external trigger is also recorded by the DBB. The trigger signal is feed into one of the 64 input channel and is
-treated as any other signal. Therefore, only 63 channels are recorded from the FEB. The board also calculates the width of every spill, counts
-the number of spills, number of triggers in the spills, and number of hits in every channel.
+The two essential roles of the DBB are to sample 63 of the channels coming from the FEB plus an external trigger signal and to store the accumulated
+digital data during the spill. It also has to transmit this data upon request of the acquisition system. The digitization starts when the board
+receives the so called Spill Gate signal from an external LEMO connector. The number of clock ticks from the begging of the spill to the leading edge
+and trailing edge of every discriminated signal coming from the FEB is recorded. The difference between the two measurements represents the time over
+threshold of the original signal. The clock sampling rate is 400 MHz ($2.5 \ ns$ resolution). The external trigger signal is feed into one of the
+64 input channel and is treated as any other signal. This signal does not serve as a trigger for the DBB itself, since the board records continuously
+and all signals arriving within the spill gate are digitized and recorded. Nevertheless, the timing of the trigger signal is important, because it is
+used to identify the records belonging to a given particle and for matching with the measurements recorded by the other detectors. The board also
+calculates the width of every spill, counts the number of spills, number of triggers in the spills, and number of hits in every channel.
 
-The general architecture of the DBB is organized around a single FPGA\footnote{Altera Stratix II (EP2S30F484C3N)} that performs the sampling, data
-buffering, and dataflow control functions of the board. Internal memory of the FPGA, configured as FIFO, is used to store the event data which is
+The architecture of the DBB is organized around a single FPGA\footnote{Altera Stratix II (EP2S30F484C3N)} that performs the sampling, data
+buffering, and data-flow control functions of the board. Internal memory of the FPGA, configured as FIFO, is used to store the event data which is
 a collection of leading and trailing edge timestamps that occurred on each channel during a specific spill. Two gigabit transceivers\footnote{TLK1501}
 are interfaced to the FPGA to provide the physical transmission channels and form an upstream command link and a downstream data link. Six DBB's are
 grouped together and daisy-chained with upstream and downstream links via ethernet cable. The first DBB in each group is directly connected to the
-acquisition system - the VRB - via four coaxial cables.
+the VRB via four coaxial cables.
 
 \subsubsection{VME Configuration Board}
 The VCB is a single FPGA\footnote{Altera Cyclone II (EP2C50F484C8N} board designed to perform configuration of the MAROC chip on the FEB. The
-communication between the boards is realized via LVDS\footnote{Low-Voltage Differential Signaling, communication protocol.} signals driven and
-received by LVDS drivers/receivers directly connected to corresponding FPGA's. As mentioned in the previous section, it can read analog signal
-(charge of the signal from every channel) from the FEB but this is not implemented in the current design. The board is connected to VME bus through
-which it communicates with the VME controller and the DAQ computer. The MAROC chip is configured by TTL\footnote{Transistor-Transistor Logic} signal
-composed of 830 bits which code the configuration parameters.
+communication between the two boards is realized via LVDS\footnote{Low-Voltage Differential Signaling, communication protocol.} signals driven and
+received by LVDS drivers/receivers directly connected to corresponding FPGA's. As mentioned in the previous section, this board can read analog signal
+(charge of the signal from every channel) from the FEB but this is not implemented in the current design. The board communicates with the DAQ computer
+through the VME bus via the VME controller. The MAROC chip is configured by TTL\footnote{Transistor-Transistor Logic} signal composed of 830 bits which
+code the configuration parameters.
 
 
 \subsubsection{VME Read-Out Board}\label{electronics:subsec:vme_readout_board}
@@ -328,21 +330,21 @@ providing the record of the DBB data, which is originally structured in 32 bits 
 the data accumulated by the 6 DBBs during the spill is available in the local memory buffer of the VRB, the DAQ computer sends a second request which
 triggers the transfer of this data over the VME bus.
 
-Additional LVDS input/output connector is available at the front pannel of the board. This connector does not have a specific function, and was used
+Additional LVDS input/output connector is available at the front panel of the board. This connector does not have a specific function, and was used
 mostly for debugging.
 
 \subsubsection{Fast ADC Board}\label{electronics:subsec:fast_adc_board}
 
-The Flash ADC Waveform Digitizer made by CAEN~\cite{V1731} is used to readout signals from single-anode PMTs. The ADC has a sampling frequency of 500 M
+A waveform digitizer V1731, made by CAEN~\cite{V1731} is used to readout signals from single-anode PMTs. The digitizer has a sampling frequency of 500 M
 samples per second (2~ns resolution timing resolution). A pulse shape of each input signal is digitized by 8 bit ADC and continuously written in a
-circular memory buffer. When a trigger arrives the FPGA writes certain number samples defined by the pre- and post-trigger settings into a buffer which
-then is available for readout via VME bus.
+circular memory buffer. When a trigger\footnote{The same trigger signal is received by the DBBs} arrives the FPGA writes a certain number samples into
+a buffer which then is available for readout via VME bus.
 
 
 \subsection{Mechanics}\label{design:subsec:mechanics}
 
-Total wight of the sensitive volume of the detector is almost 1 tonne. During construction and installation it is required to rotate and move the detector;
-besides that it is meant to be transported in a truck over more then 1000 kilometers. Therefore a reinforced support frame (see Figure~\ref{fig:emr_support})
+Total weight of the sensitive volume of the detector is almost 1 tonne. During construction and installation it is required to rotate and move the detector;
+besides that it is meant to be transported in a truck over more then 1000 kilometres. Therefore a reinforced support frame (see Figure~\ref{fig:emr_support})
 was design so that it can withhold the weight of the sensitive detector and all the stress that may happen during the transportation and installation. In its
 final position the EMR is installed in such a way so that planes are located vertically perpendicular to a beam direction. 
 
@@ -362,7 +364,7 @@ final position the EMR is installed in such a way so that planes are located ver
 
 Figure~\ref{fig:internal_dimensions} shows location of the sensitive volume with respect to the support frame. The frame is covered with panels so that
 the whole volume is light-tight. A panel which faces the beam (see Figure~\ref{fig:internal_dimensions}, right) is made of 5~cm thick iron plates (total
-wight 755~kg) and plays a role of global shielding for electronics. The back panel is made of metal profiles and thin aluminum panels. The opening in
+weight 755~kg) and plays a role of global shielding for electronics. The back panel is made of metal profiles and thin aluminium panels. The opening in
 the shielding front panel is closed with a thin wooden end cap and in the back panel - with metal end cap (since it holds the weight of the detector
 during assembly when it is in horizontal position).
 
@@ -386,7 +388,7 @@ similar to the one used to polish all bar connectors. In total there were 96 fib
 \begin{figure}[htp!]
  \centering
  \includegraphics[width=\textwidth]{./fiber_bundles}
- \caption[Clear fiber bundles]{Clear fiber bundles. {\bf Left:} fiber pre-cut to the specified length. {\bf Center:} PMT connector. {\bf Right:} fiber connector.}
+ \caption[Clear fiber bundles]{Clear fiber bundles. {\bf Left:} fiber pre-cut to the specified length. {\bf Centre:} PMT connector. {\bf Right:} fiber connector.}
  \label{fig:fiber_bundles}
 \end{figure}
 
@@ -394,7 +396,7 @@ similar to the one used to polish all bar connectors. In total there were 96 fib
 
 Numerous quality test were implemented, in order to assure the best possible performance of the different components of the detector. 
 
-A dedicated bar quality test bench was constructed in oreder to test the light transmission of each bar, including the transmission of the WLS fiber and the
+A dedicated bar quality test bench was constructed in order to test the light transmission of each bar, including the transmission of the WLS fiber and the
 quality of the two connectors. The test bench consisted of a LED\footnote{Light Emitting Diode} system, 4 scintillator bars and a digital camera, all placed
 in a light-tight box. The LED system included blue LED, light mixing box and diffusers, providing that the light is homogeneous at the outputs, where the bars
 under test are connected. The camera was taking a photo of the four connectors at the opposite side of the bars. Out of four bars one was a reference and the
@@ -445,12 +447,14 @@ front-end boards and the digitizer-buffer boars. It reproduced the full electron
 light is generated by a LED power by a variable amplitude pulser. The LED was attached to the MAPMT injecting light in all channels at the same time. The
 final measurement that is provided by the system is a time-over-threshold of the PMT signal. During the tests this measurement is used as a figure of merit
 to characterize the electronics chain (PMT, FEB and DBB). Figure~\ref{fig:tot_feb_dbb_test} shows an example of a fully functional electronics chain (top)
-and an example of a faulty electronics (bottom). Only boards, exhibiting a behavior as in Figure~\ref{fig:tot_feb_dbb_test}(top), were accepted for
+and an example of a faulty electronics (bottom). Only boards, exhibiting a behaviour as in Figure~\ref{fig:tot_feb_dbb_test}(top), were accepted for
 installation in the detector.
 
 \subsection{Detector commissioning with cosmic rays}\label{sec:cosmics_perform}
 
-After the assembly was completed, the detector was fully powered and tested during a few days of cosmics data collection.
+After the assembly was completed, the detector was fully powered and tested during a few days of cosmics data collection. 
+
+\cite{Francois}
 
 
 \section{Transportation and installation at Rutherford Lab}
@@ -458,11 +462,12 @@ After the assembly was completed, the detector was fully powered and tested duri
 The total weight of the EMR detector is 2.5 tonnes. Therefore a special care was taken to insure safety and shock-free transportation of the detector.
 Namely, the detector was attached to special shock absorbers designed to withstand this weight and allow for shock absorption in all three directions. The
 shock absorbers were then attached to a pallet by which the detector was handled. It was placed in a truck and transported from University of Geneva to
-Rutherford Lab (Didcot, Oxfordshire, UK) over more than 1100 kilometers. 
+Rutherford Lab (Didcot, Oxfordshire, UK) over more than 1100 kilometres. 
 
 Once delivered to the Rutherford Lab the EMR detector was installed in the MICE hall and positioned vertically at the end of existing MICE beamline. Later,
 it was exposed to a beam which parameters were varied in order to achieve different beam compositions and momenta. This data was used to verify the designed
-functionality of the detector, i.e. the ability to distinguish different particle types (muons, electrons and pions) and to measure their ranges\cite{performance} . 
+functionality of the detector, i.e. the ability to distinguish different particle types (muons, electrons and pions) and to measure their ranges
+\cite{performance}. 
 
 \section*{Acknowledgement}
 The work described here was made possible by grants from Swiss National Science Foundation, in the framework of the SCOPES programme and the European Community
