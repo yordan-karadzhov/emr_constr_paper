@@ -24,10 +24,9 @@ The Electron-Muon Ranger (EMR) is a totally active scintillator detector install
 Cooling Experiment (MICE) \cite{MICEweb}. The experiment will demonstrate ionization cooling, an essential technology needed
 for the realization of a Neutrino Factory and/or Muon Collider. The EMR is aimed at measuring the properties of the low
 energy beam composed of muons, electrons and pions, performing the identification particle by particle. The detector is
-made of 48 stacked layers alternately measuring the X- and the Y-coordinate. Each layer consists of 59 triangular
-scintillator bars. The read-out is based on FPGA custom made electronics and commercially available modules. This article
-will describe the construction of the detector, starting with the design of the detector up to its final commissioning with
-particle beam.
+made of 48 stacked layers alternately measuring $X$ and $Y$ coordinates. Each layer consists of 59 triangular scintillator
+bars. The read-out is based on FPGA custom made electronics and commercially available modules. This article will describe
+the construction of the detector, starting with the design of the detector up to its final commissioning with particle beam.
 \end{abstract}
 
 \section{Introduction}
@@ -52,17 +51,17 @@ i.e the muon must be “cooled”, so that the beam can be accelerated efficient
 Ionization cooling \cite{icool1} (Fig.\ \ref{icool}) provides the only practical solution to this problem,
 because it is fast enough to cool the beam within the muon lifetime ($\tau_\mu \sim 2.2 \ \mu s$). The cooling effect is
 accomplished by passing the muons through a low-Z material (\textquotedblleft absorber\textquotedblright), in which they
-loses energy via ionization, reducing both the longitudinal and the transverse components of momentum. Later the longitudinal
-momentum is restored by accelerating cavities. The net effect is a reduction of the beam emittance. To maximize cooling
-we need the absorber to be placed at a position where the transverse momentum $P_T$
-has a maximum (the transverse betatron function $\beta_{\perp}$ has a minimum).
+loses energy via ionization, reducing both the longitudinal and the transverse components of the momentum. Later the
+longitudinal momentum is restored by accelerating cavities. The net effect is a reduction of the beam emittance. To
+maximize cooling we need the absorber to be placed at a position where the transverse momentum $P_T$ has a maximum
+(the transverse betatron function $\beta_{\perp}$ has a minimum).
 
 \subsection{MICE}
 The international Muon Ionization Cooling Experiment (MICE) \cite{MICEweb} is under development at the Rutherford Appleton
 Laboratory (UK). The goal of the experiment is to build a section of a cooling channel that can demonstrate the principle
 of Ionization cooling and to verify its performance in a muon beam. 
 
-Since energy loss by ionization and multiple Coulomb scattering are momentum dependent, the ionization-cooling effect is
+Since energy loss by ionization and multiple Coulomb scattering are momentum dependent, the ionization cooling effect is
 momentum dependent. MICE (Fig. \ref{mice}) uses variety of muon beams of limited intensity, having central momenta in the
 range $140 - 240 \ MeV/c$ and a momentum spread of $\sim 20 \ MeV/c$. These muon beams are generated using a titanium target
 \cite{target} which is dipped into the ISIS proton beam \cite{isis}. Produced secondary and tertiary particles are captured,
@@ -121,10 +120,9 @@ configuration there is no dead area for particles crossing a plane with angles l
 
 
 The light, produced when a particle crosses a bar, is collected by a wave-length shifting (WLS) fiber glued inside the bar. 
-Transparent epoxy\footnote{Prochima E30 water effect resin} is used to glue the WLS fiber in order to increase the light
-collection efficiency. At both ends of a bar the WLS fiber is coupled to a clear fiber that transfers the light to a photo-multiplier
+At both ends of a bar the WLS fiber is coupled to a clear fiber that transfers the light to a photo-multiplier
 (PMT). The clear fibers are protected with rubber sleeves and packed in aluminum fiber boxes as drawn in Figure 
-\ref{fig:clear_fiber_package}. In order to reduce the bending radius, which affects light attenuation, each fiber has individual
+\ref{fig:clear_fiber_package}. In order to reduce the bending radius, which affects light attenuation, each fiber has an individual
 length. The two bunches of clear fibers coming from the two sides of a plane are glued into different types of connectors.
 One is designed to match a multi-anode PMT, when the other one matches a single-anode PMT.
 
@@ -169,21 +167,20 @@ the detector, a shielding plate is mounted on the side of the detector that face
 2.5 tonnes.
 
 \subsection{Optical Elements}
-The scintillator bars were manufactured at extrusion facility at Fermilab~\cite{PlaDalmau:2001fr}.
-This facility also produced scintillators of different shapes for other experiments like: DO preshower detector, MINOS~\cite{PlaDalmau:2001en},
+The scintillator bars were manufactured at an extrusion facility at Fermilab~\cite{PlaDalmau:2001fr}. This facility also produced
+scintillators of different shapes for other experiments like: DO preshower detector, MINOS~\cite{PlaDalmau:2001en},
 Minerva~\cite{PlaDalmau:2005df}, SciBar (K2K/SciBoone), Star, Mayn Pyramid Mapping, Hall-B JLAB, T2K-ND280, Double-Chooz, Amiga
-- Piere Auger. Each bars is 110~cm long, 1.7~cm high and
-3.3~cm wide with 3~mm hole along the bar for a wavelength shifting fiber. The scintillator is made of polystyrene
-pellets\footnote{Dow Styron 663 W} as base, 1\% PPO\footnote{scintillator, 2,5-diphenyloxazole, C$_{15}$H$_{11}$NO} as primary and 0.03\% 
-POPOP\footnote{wavelength shifter, 1,4-di-(5-phenyl-2-oxazolyl)-benzene, C$_{24}$H$_{16}$N$_{2}$O, spectrum peaks at 410 nm (violet)} 
-as secondary fluor. Each bar is coated with TiO$_2$ reflector to increase light collection by a wavelength shifting fiber inserted inside
-the scintillator. Light output of the scintillator was measured~\cite{PlaDalmau:2001fr} with a photo-multiplier (25\% quantum efficiency)
+- Piere Auger. Each bar is 110~cm long, 1.7~cm high and 3.3~cm wide with 3~mm hole along the bar for a wavelength shifting fiber.
+The scintillator is made of polystyrene pellets\footnote{Dow Styron 663 W} as base, 1\% PPO\footnote{scintillator, 2,5-diphenyloxazole,
+C$_{15}$H$_{11}$NO} as primary and 0.03\% POPOP\footnote{wavelength shifter, 1,4-di-(5-phenyl-2-oxazolyl)-benzene, C$_{24}$H$_{16}$N$_{2}$O,
+spectrum peaks at 410 nm (violet)} as secondary fluor. Each bar is coated with TiO$_2$ reflector in order to increase light collected by 
+the WLS fiber. Light output of the scintillator was measured~\cite{PlaDalmau:2001fr} with a photo-multiplier (25\% quantum efficiency)
 and it is around 17 photo-electrons. 
 
 The WLS fiber glued inside the bar is a double cladding 1.2~mm in diameter fiber, produced by Saint-Gobain Crystals~\cite{saintgobain}.
 The core material of the fiber is polystyrene with acrylic cladding. It has very large numerical aperture of 0.58 compared to 0.2-0.3
-of graded-index multi-mode fiber used in data communications. Trapping efficiency is 3.5\%. The light is absorbed in blue part of a visible
-spectrum and re-emitted in green. 
+of graded-index multi-mode fiber used in data communications. Trapping efficiency is 3.5\%. The light is absorbed in the blue part of
+the visible spectrum and re-emitted in green. 
 
 The clear fiber, used to transfer light from the ends of scintillator bar to the PMTs, is a 1.5mm multi-cladding fiber produced by 
 Kuraray~\cite{kuraray} with special structure (S-type) that allows for better rigidity against bending. The aperture of this fiber matches
@@ -210,10 +207,6 @@ injection molding technique.
  \label{fig:pmt_connectors}
 \end{figure}
 
-Both faces of the bar's fiber connectors are polished with a special polishing machine. Four different grades of sand paper are used to
-achieve a mirror like quality of the polished surfaces. The last step is performed using a 1$\mu$m grade diamond-based polishing paper. The
-same procedure is applied to the clear fiber connectors and PMT connectors (see Figure~\ref{fig:pmt_connectors}).
-
 \subsection{Photo-detectors}
 As it was briefly mentioned earlier the EMR has a dual readout. Each scintillator plane is equipped with a multi-anode PMT, which collects
 the light from the individual bars and a single-anode PMT which detects the integrated response of all bars in the plane. 
@@ -235,7 +228,7 @@ the light from the individual bars and a single-anode PMT which detects the inte
 
 The multi-anode photo-multiplier tube (MAPMT) is a 64-channel PMT produced by Hamamatsu (model R5900-00-M64~\cite{hamamatsu_mapmt}, see
 Figure~\ref{fig:mapmt}, left). The spectral sensitivity matches to the emission spectrum of the wavelength shifting fiber. It is 
-placed in a $\mu$-metal tube  which serves as additional shielding against the static magnetic filed. Inside the $\mu$-metal tube,
+placed in a $\mu$-metal tube  which serves as an additional shielding against the static magnetic filed. Inside the $\mu$-metal tube,
 the PMT is aligned with respect to the fiber connector in such a way that each fiber shines only one
 channel. Therefor it was important to measure all dimensions of the PMT and especially position of the anode matrix with respect to the
 PMT case (Figure~\ref{fig:mapmt}, centre). Figure~\ref{fig:mapmt_dimensions} shows distributions of the measured dimensions (width and
@@ -262,8 +255,8 @@ accumulated digital data is kept in local memory buffers and the readout is perf
  \label{fig:EMR_electronics_layout}
 \end{figure}
 
-A schematic layout of the EMR electronics is shown in Figure~\ref{fig:EMR_electronics_layout}. The multi-anode PMT connected via a flex cable
-to a front-end board (FEB) which processes the signal and sends it to a piggy-back digitizer-buffer board (DBB) for digitization and storage.
+A schematic layout of the EMR electronics is shown in Figure~\ref{fig:EMR_electronics_layout}. The multi-anode PMT is connected via a flex cable
+to a front-end board (FEB), which processes the signal and sends it to a piggy-back digitizer-buffer board (DBB) for digitization and storage.
 The FEB is configured by the VME configuration board (VCB), which resides in the VME crate in the control rack. This board is able to configure
 up to 16 FEBs, therefore three of them are required for the full detector. The DBBs are readout by groups of six. In each group the first DBB
 is a master and the other five are slaves. All six boards are daisy-chained via ethernet cable and the master is connected to a VME readout board
@@ -278,20 +271,24 @@ installed in the control rack.
  \label{fig:feb_dbb}
 \end{figure}
 
-The multi-anode PMT is readout by a dedicated front-end board equipped with piggy-back digitizer-buffer board \cite{Bolognini2011108}, which stores hit information
-during a spill. Figure~\ref{fig:feb_dbb} show the full assembly that is mounted on every plane of the detector. It consists of a PMT attached to a voltage
-divider which is connected to a FEB through a flex cable. This cable also creates additional pressure between the PMT and fiber connector. The FEB
-is able to process all 64\footnote{Each EMR plane contains 59 scintillator bars which results in having 5 redundant channels.} signals of the MAPMT
-thanks to 64-channel ASIC\footnote{Application-Specific Integrated Circuit} called MAROC\footnote{Multi Anode ReadOut Chip}. The 64 analog signals
-are feed into the MAROC chip where they are shaped and discriminated. The discriminated signals are then forwarded to two high density connectors
-where a DBB is connected. The width of the discriminated signal represents a time over threshold measurement. The MAROC ASIC also provides analog
-measurement - signal charge. This measurement is based on a slow shaper and is multiplexed from all the channels and it requires a trigger (either
-external or internal) to produce a measurement. It takes tens of microseconds (depending on MAROC configuration) to process all the multiplexed
-signals and this dead time is not acceptable for the MICE DAQ duty cycle (a few hundred triggers per 1~ms spill). Therefore only time-over-threshold
-measurement is used since it is practically dead-timeless. The function of the FPGA chip\footnote{Altera Cyclone II (EP2C35F484C8N)} is mainly to
-forward data from MAROC to the DBB and to send configuration signals from the VCB to the MAROC and verify their status. The board has a separate
-power for analog and por the digital parts (both 5~V). The total power consumption of the board is 0.6~Amp.
+The multi-anode PMT is readout by a dedicated front-end board equipped with piggy-back digitizer-buffer board \cite{Bolognini2011108}, which stores
+hit information during a spill. Figure~\ref{fig:feb_dbb} show the full assembly that is mounted on every plane of the detector. It consists of a PMT
+attached to a voltage divider, which is connected to a FEB through a flex cable. This cable also creates additional pressure between the PMT and
+the fiber connector. The FEB is able to process all 64\footnote{Each EMR plane contains 59 scintillator bars which results in having 5 redundant
+channels.} signals of the MAPMT thanks to a 64-channel ASIC\footnote{Application-Specific Integrated Circuit} called MAROC\footnote{Multi Anode
+ReadOut Chip}\cite{maroc}.
 
+The 64 analog signals are feed into the chip where they are processed in parallel: each channel consists of a pre-amplifier with a variable gain,
+a tunable slow shaper and a sample and hold circuit for the analog readout, a tunable fast shaper and a discriminator for the digital one.
+The MAROC ASIC provides 64 parallel digital outputs, which are forwarded to two high density connectors where a DBB is plugged. The width of the
+discriminated signal represents a time over threshold measurement. One multiplexed analog output is also provided and this output is digitized by
+an external ADC (AD9220, Analog Devices). It takes tens of microseconds (depending on the MAROC configuration used) to process all the multiplexed signals
+and this dead time is not acceptable for the MICE DAQ duty cycle (a few hundred triggers per 1~ms spill). Therefore only time-over-threshold
+measurement is used since it is practically dead-timeless.
+
+The function of the FPGA chip\footnote{Altera Cyclone II (EP2C35F484C8N)} is mainly to forward data from the MAROC to the DBB and to send configuration
+signals from the VCB to the MAROC and verify their status. The board has a separate power for analog and por the digital parts (both 5~V). The total
+power consumption of the board is 0.6~Amp.
 
 The two essential roles of the DBB are to sample 63 of the channels coming from the FEB plus an external trigger signal and to store the accumulated
 digital data during the spill. It also has to transmit this data upon request of the acquisition system. The digitization starts when the board
@@ -313,11 +310,10 @@ the VRB via four coaxial cables.
 \subsubsection{VME Configuration Board}
 The VCB is a single FPGA\footnote{Altera Cyclone II (EP2C50F484C8N} board designed to perform configuration of the MAROC chip on the FEB. The
 communication between the two boards is realized via LVDS\footnote{Low-Voltage Differential Signaling, communication protocol.} signals driven and
-received by LVDS drivers/receivers directly connected to corresponding FPGA's. As mentioned in the previous section, this board can read analog signal
-(charge of the signal from every channel) from the FEB but this is not implemented in the current design. The board communicates with the DAQ computer
-through the VME bus via the VME controller. The MAROC chip is configured by TTL\footnote{Transistor-Transistor Logic} signal composed of 830 bits which
-code the configuration parameters.
-
+received by LVDS drivers/receivers directly connected to a corresponding FPGAs. The MAROC chip is configured by TTL\footnote{Transistor-Transistor
+Logic} signal composed of 830 bits which code the configuration parameters. The VCB can readout from the FEB the digitized measurement of the
+MAROC analog output, but this is not implemented in the current design. The board communicates with the DAQ computer through the VME bus via the
+VME controller. 
 
 \subsubsection{VME Read-Out Board}\label{electronics:subsec:vme_readout_board}
 
@@ -336,10 +332,9 @@ mostly for debugging.
 \subsubsection{Fast ADC Board}\label{electronics:subsec:fast_adc_board}
 
 A waveform digitizer V1731, made by CAEN~\cite{V1731} is used to readout signals from single-anode PMTs. The digitizer has a sampling frequency of 500 M
-samples per second (2~ns resolution timing resolution). A pulse shape of each input signal is digitized by 8 bit ADC and continuously written in a
-circular memory buffer. When a trigger\footnote{The same trigger signal is received by the DBBs} arrives the FPGA writes a certain number samples into
-a buffer which then is available for readout via VME bus.
-
+samples per second (2~ns timing resolution). A pulse shape of each input signal is digitized by 8 bit ADC and continuously written in a circular memory
+buffer. When a trigger\footnote{The same trigger signal, received by the DBBs} arrives the FPGA writes a certain number samples into the buffer, which
+then is available for readout via the VME bus.
 
 \subsection{Mechanics}\label{design:subsec:mechanics}
 
@@ -351,7 +346,8 @@ final position the EMR is installed in such a way so that planes are located ver
 \begin{figure}[htp!]
  \centering 
  \includegraphics[width=\textwidth]{./emr_support}
- \caption[EMR support frame]{EMR support frame. When installed in the experimental hall the EMR is integrated into support structure of other detectors.}
+ \caption[EMR support frame]{EMR support frame. When installed in the MICE experimental hall, the EMR is integrated into the support structure of the other 
+ downstream particle identification detectors.}
  \label{fig:emr_support}
 \end{figure}
 
@@ -362,11 +358,10 @@ final position the EMR is installed in such a way so that planes are located ver
  \label{fig:internal_dimensions}
 \end{figure}
 
-Figure~\ref{fig:internal_dimensions} shows location of the sensitive volume with respect to the support frame. The frame is covered with panels so that
-the whole volume is light-tight. A panel which faces the beam (see Figure~\ref{fig:internal_dimensions}, right) is made of 5~cm thick iron plates (total
-weight 755~kg) and plays a role of global shielding for electronics. The back panel is made of metal profiles and thin aluminium panels. The opening in
-the shielding front panel is closed with a thin wooden end cap and in the back panel - with metal end cap (since it holds the weight of the detector
-during assembly when it is in horizontal position).
+Figure~\ref{fig:internal_dimensions} shows the location of the sensitive volume with respect to the support frame. The frame is covered with panels so that
+the whole volume is light-tight. 5~cm thick iron plates are used to form a front panel magnetic shield (total weight 755~kg). The opening in the shielding
+panel, which matches the size of the sensitive volume, is closed with a thin wooden end cap. The back panel is closed with a metal end cap (since it holds
+the weight of the detector during assembly, when it is in horizontal position).
 
 \section{Construction}\label{sec:construction}
 
@@ -375,15 +370,17 @@ can damage the polystyrene molecules. This is especially important for fibers, b
 related to fibers and scintillators were performed in a UV clean room, i.e. lights and windows were covered with UV-protective films, with air conditioning
 that kept the temperature around 25 \degree C. 
 
-As it was mentioned in the previous section the scintillator bars were produced at Fermilab. The first step in the construction was to glue the wavelength
-shifting fibers into the bars. Although 2832 bars were required for building the full detector, 3150 bars were glued and assembled with fiber connectors in
-order to provide enough spares available. In the second step, each fiber connector (two per bar) was polished on a dedicated bench equipped with four
-different diamond sanding papers. 
+As it was already mentioned, the scintillator bars were produced at Fermilab. The first step in the construction was to glue the wavelength shifting fibers
+into the bars. Transparent epoxy\footnote{Prochima E30 water effect resin ????} was used to glue the WLS fiber in order to increase the light collection
+efficiency. Although 2832 bars were required for building the full detector, 3150 bars were glued and assembled with fiber connectors in
+order to provide enough spares available. In the second step, both faces of the bar's fiber connectors were polished with a special polishing machine. Four
+different grades of sand paper are used to achieve a mirror like quality of the polished surfaces. The last step is performed using a 1$\mu$m grade
+diamond-based polishing paper.
 
 Fiber bundles made of 60 clear fibers (see Figure~\ref{fig:fiber_bundles}) were manufactured. In the bundle, each fiber has an individual length, providing
 a minimum bending radius, when connected. A fiber connector (see Figure~\ref{fig:fiber_connectors_cad}, bottom right) is glued at one end of each fiber. At
-the other end all fibers are glued either in multi-anode or single-anode PMT connector. Once glued, both fiber and PMT connectors are polished on a bench
-similar to the one used to polish all bar connectors. In total there were 96 fiber bundles (48 for each type of PMTs).
+the other end all fibers are glued either in multi-anode or single-anode PMT connector (see Figure~\ref{fig:pmt_connectors}). Once glued, both fiber and PMT
+connectors are polished on a bench, similar to the one used to polish all bar connectors. In total there were 96 fiber bundles (48 for each type of PMTs).
 
 \begin{figure}[htp!]
  \centering
@@ -397,14 +394,14 @@ similar to the one used to polish all bar connectors. In total there were 96 fib
 Numerous quality test were implemented, in order to assure the best possible performance of the different components of the detector. 
 
 A dedicated bar quality test bench was constructed in order to test the light transmission of each bar, including the transmission of the WLS fiber and the
-quality of the two connectors. The test bench consisted of a LED\footnote{Light Emitting Diode} system, 4 scintillator bars and a digital camera, all placed
-in a light-tight box. The LED system included blue LED, light mixing box and diffusers, providing that the light is homogeneous at the outputs, where the bars
-under test are connected. The camera was taking a photo of the four connectors at the opposite side of the bars. Out of four bars one was a reference and the
-measurements were normalized to it in order to take into account the effect of a possible LED instability and to have a possibility to compare different
-measurements. An automated program was used to analyze the photos (Figure~\ref{fig:measurements} - left) and to calculate the light intensity of each bar.
-Figure~\ref{fig:measurements} - right shows the distribution of the measured relative residuals of the light intensity\footnote{The difference between the
-measured value and the average value divided by the average.}. Only bars with the relative residual intensity above -0.15 were accepted for plane assembly.
-Out of 3150 tested bars 305 bars (9.7\%) did not pass that requirement and were rejected.
+quality of the two connectors. The test bench consisted of a LED\footnote{Light Emitting Diode} system, a holder for 4 scintillator bars and a digital camera,
+all placed in a light-tight box. The LED system included blue LED, light mixing box and diffusers, providing that the light is homogeneous at the outputs,
+where the bars under test are connected. The camera was taking a photo of the four connectors at the opposite side of the bars. Out of four bars one was a
+reference and the measurements were normalized to it in order to take into account the effect of a possible LED instability and to have a possibility to
+compare different measurements. An automated program was used to analyze the photos (Figure~\ref{fig:measurements} - left) and to calculate the light
+intensity of each bar. Figure~\ref{fig:measurements} - right shows the distribution of the measured relative residuals of the light intensity. The relative
+residual was defined as the difference between the measured value and the average value divided by the average. Only bars with a relative residual
+intensity above -0.15 were accepted for plane assembly. Out of 3150 tested bars 305 bars (9.7\%) did not pass that requirement and were rejected.
 
 \begin{figure}[htb]
  \centering
@@ -417,9 +414,9 @@ Out of 3150 tested bars 305 bars (9.7\%) did not pass that requirement and were 
 A similar test was used to examine each EMR plane after the assembly. An LED tube attached to a single-anode PMT connector was used to send light through
 the fibers (WLS and clear) all the way up to the multi-anode PMT connector, where a picture of the PMT mask was taken by a camera. Again,  an automated
 program was used to analyse the photos (Figure~\ref{fig:plane_tests_one_planes} - left) and to calculate the relative residuals of the light intensity
-of the individual channels (Figure~\ref{fig:plane_tests_one_planes} - right). During this test not only fiber bundles are verified but also a quality of
-the interconnections between wavelength shifting fiber and clear fiber is tested. If the relative residual intensity of all 60 channels is above -0.4,
-then the plane is accepted.
+of the individual channels (Figure~\ref{fig:plane_tests_one_planes} - right). This test verified the light transmission of the fiber bundles, but also
+the quality of the interconnections between the WLS fibers and clear fibers. A plane was accepted only if the relative residual intensity of all 60
+channels were above -0.4.
 
 \begin{figure}[htb]
  \centering
@@ -444,10 +441,10 @@ then the plane is accepted.
 
 A separate test bench was setup in order to verify the functionality of the three major components of the EMR electronics: the multi-anode PMTs, the 
 front-end boards and the digitizer-buffer boars. It reproduced the full electronics chain used to readout the detector with the only difference that the
-light is generated by a LED power by a variable amplitude pulser. The LED was attached to the MAPMT injecting light in all channels at the same time. The
+light is generated by a LED, power by a variable amplitude pulser. The LED was attached to the MAPMT injecting light in all channels at the same time. The
 final measurement that is provided by the system is a time-over-threshold of the PMT signal. During the tests this measurement is used as a figure of merit
 to characterize the electronics chain (PMT, FEB and DBB). Figure~\ref{fig:tot_feb_dbb_test} shows an example of a fully functional electronics chain (top)
-and an example of a faulty electronics (bottom). Only boards, exhibiting a behaviour as in Figure~\ref{fig:tot_feb_dbb_test}(top), were accepted for
+and an example of a faulty electronics (bottom). Only boards, exhibiting a behaviour as in Figure~\ref{fig:tot_feb_dbb_test} - top, were accepted for
 installation in the detector.
 
 \subsection{Detector commissioning with cosmic rays}\label{sec:cosmics_perform}
