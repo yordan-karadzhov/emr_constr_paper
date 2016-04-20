@@ -2,6 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \setlength{\textwidth}{475pt}
 \setlength{\textheight}{660pt}
@@ -447,12 +450,60 @@ to characterize the electronics chain (PMT, FEB and DBB). Figure~\ref{fig:tot_fe
 and an example of a faulty electronics (bottom). Only boards, exhibiting a behaviour as in Figure~\ref{fig:tot_feb_dbb_test} - top, were accepted for
 installation in the detector.
 
-\subsection{Detector commissioning with cosmic rays}\label{sec:cosmics_perform}
+\subsection{Cosmic-based channel mismatch analysis}\label{sec:cosmics_perform}
 
-After the assembly was completed, the detector was fully powered and tested during a few days of cosmics data collection. 
+The design of the EMR, involving the connection of external clear fibres to internal WLS fibres \cite{emr_design_change}, leaves room for human error in matching the two correctly.
 
-\cite{Francois}
+An analysis was designed to verify the consistency of the cabling across the 2832 bars in the detector \cite{Francois}. The analysis uses the distance between each bar hit and its particle track as a tool to estimate the likelihood of mismatch. A mismatched channel is not reconstructed in the right location and is, on average, significantly less consistent with particle tracks.
 
+Cosmic muons are particularly suited for this procedure as they traverse the whole detector without stopping and provide full coverage. At the time of data taking, the detector was positioned upright in the MICE hall, planes perpendicular to the beam axis. Two pairs of planes (15--16 and 31--32) were used as particle triggers in coincidence with a software 3\,ms spill gate. Data was taken for 60 hours and yielded $\sim$223000 particle triggers.
+
+Time-over-threshold measurements were recorded along with their timestamps in the 2832 channels for each trigger. Four dead channels were unveiled in plane 34. The amount of hits recorded in each bar is of order $\sim10^3$.
+
+Two cuts are applied to the data sample in order to rid the muon tracks of artificial hits caused by crosstalk and noise. Crosstalk signals represent a small fraction of the total light yield and hence are rejected by placing a lower limit on the time-over-threshold. Restricting the delay between the trigger time and the hit time to a small interval gets rid of most of the noise.
+
+To reconstruct tracks and calculate the distance of each hit from its particle trail, the hits are split into two projections $qz$, $q=x,y$. The plane ID of the channel hit provides the $z$ coordinate and the bar ID provides either $x$ for X planes or $y$ for Y planes. The $(q_i,z_i)$ coordinates are those of the barycentre of the triangular section or the bar corresponding to the hit. For a linear fit $q=a_qz+b_q$, the absolute distance between a hit $(q_i,z_i)$ and the track within a plane reads $\Delta q_i=|q_i-(a_qz_i+b_q)|$. For intuitiveness, distances are expressed in $\mathrm{b.u.}$ (bar units) in the following developments. A $\mathrm{b.u.}$ corresponds to the height of the triangular section or equivalently to the half width of its base.
+
+The critical secondary variables that is measured for each channel are the ratios of mismatch, $R_i$. Given an integer $i$, the ratio $R_i$ corresponds to the fraction of the sample for which the bar is within $i\pm2/3$ $\mathrm{b.u.}$ off-track. For a distance distribution $f(\Delta y)$, the ratio is defined as
+
+\begin{equation}
+R_i=\frac{\int_{i-2/3}^{i+2/3}f(\Delta y)\mathrm{d}(\Delta y)}{\int_{0}^{2/3}f(\Delta y)\mathrm{d}\Delta y+\int_{i-2/3}^{i+2/3}f(\Delta y)\mathrm{d}\Delta y}.
+\end{equation}
+
+For instance, the ratio $R_1$ represents the probability of a bar of being mismatched by exactly 1\,$\mathrm{b.u.}$, i.e. to be swapped with an adjacent bar. It is shown in \cite{Francois} that $R_i$ is theoretically estimated to take values summarized in table~\ref{tab:mismatch_ratio} for different scenarios.
+
+\begin{table}[!h]
+ \centering
+ \begin{tabular}{c|c|c|c|c}
+  & \multicolumn{2}{c|}{Matched} & \multicolumn{2}{c}{Mismatched}  \\
+  \hline
+  & $xz$ proj. & $yz$ proj. & $xz$ proj. & $yz$ proj. \\
+  \hline
+  $R_1$ & 25.3\,\% & 32.2\,\% & 62.6\,\% & 66.1\%  \\
+  $R_{i\geq2}$ & $\sim$0\,\% & $\sim$0\,\% & $\sim$100\,\% & $\sim$100\,\%
+ \end{tabular}
+ \caption{Mismatch ratios, $R_i$, for matched and mismatched bars in the two projections.}
+ \label{tab:mismatch_ratio}
+\end{table}
+
+The mismatch ratio for adjacent bars was measured and is represented for each channel in fig. \ref{fig:ratio1}. The ratio distribution is represented next to it in log scale. The bulk of the distribution is centred around 28.88\,\%, consistent with the weighted average of the theoretical predictions for the two projections. Bars 47 and 48 of plane 44 record a ratio of 62.5$\pm$3.5\,\% and 57.2$\pm$3.2\,\%, respectively, significantly superior to the bulk and in agreement with the prediction. Their proximity to each other corroborates the hypothesis of a channel swap. The mismatch is fixed at the level of the channel map in the reconstruction.
+
+\begin{figure}[tbd]
+  \begin{minipage}[b]{.49\textwidth}
+   \centering
+   \includegraphics[width=\textwidth]{ratio1.png}
+   \caption{Mismatch ratio for adjacent bars.}
+   \label{fig:ratio1}
+  \end{minipage}
+  \begin{minipage}[b]{.49\textwidth}
+   \centering
+   \includegraphics[width=\textwidth]{ratio2.png}
+   \caption{Mismatch ratio for distant bars.}
+   \label{fig:ratio2}
+  \end{minipage}
+\end{figure}
+
+The same analysis has been conducted for potential mismatches of two bars or more, $R_{i\geq2}$. Figure~\ref{fig:ratio2} represents the value of that ratio for each channel. The results strongly reject any mismatch at this level.
 
 \section{Transportation and installation at Rutherford Lab}
 
