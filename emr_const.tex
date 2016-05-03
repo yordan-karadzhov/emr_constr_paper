@@ -412,7 +412,7 @@ intensity above -0.15 were accepted for plane assembly. Out of 3150 tested bars 
  \label{fig:measurements}
 \end{figure}
 
-A similar test was used to examine each EMR plane after the assembly. An LED tube attached to a single-anode PMT connector was used to send light through
+A similar test was used to examine each EMR plane after the assembly~\cite{emr_elquality}. An LED tube attached to a single-anode PMT connector was used to send light through
 the fibers (WLS and clear) all the way up to the multi-anode PMT connector, where a picture of the PMT mask was taken by a camera. Again,  an automated
 program was used to analyse the photos (Figure~\ref{fig:plane_tests_one_planes} - left) and to calculate the relative residuals of the light intensity
 of the individual channels (Figure~\ref{fig:plane_tests_one_planes} - right). This test verified the light transmission of the fiber bundles, but also
@@ -448,6 +448,58 @@ to characterize the electronics chain (PMT, FEB and DBB). Figure~\ref{fig:tot_fe
 and an example of a faulty electronics (bottom). Only boards, exhibiting a behaviour as in Figure~\ref{fig:tot_feb_dbb_test} - top, were accepted for
 installation in the detector.
 
+\subsection{Performance with cosmic rays}\label{sec:cosmic_perf}
+Cosmic rays present an ideal source of particle that can be used to characterize, debug and tune the detector. Cosmic rays that reach the EMR are typically multi-GeV muons that traverse the EMR without stopping. The cosmic trigger consists in the coincidence of two planes single-anode PMT signals. The EMR planes were perpendicular to the ground at the time of data taking.
+
+A typical cosmic event is shown in Figure~\ref{fig:cosmic_muon}. The raw measurements of the EMR comprise the time-over-threshold and the hit time for each bar and the integrated plane charge. The two planes used to trigger the DAQ do not record a plane charge.
+
+\begin{figure}[!htr]
+\centering
+\includegraphics[width=\textwidth]{cosmic_event.png}
+\caption{Cosmic muon event in the EMR in the $xz$ (top) and $yz$ (bottom) projections. From left to right: hits per bar, time-over-threshold, hit time with respect to the trigger and plane charge.}
+\label{fig:cosmic_muon}
+\end{figure}
+
+\subsubsection{Cosmic muon signature}\label{sec:cosmic_sig}
+Cosmic muons are minimum ionizing particles and hence deposit on average the same amount of energy in each plane. It typically hits two triangular bars in a plane, by design. The additional hits come either from crosstalk or noise (e.g. third hit in plane 26 in figure~\ref{fig:cosmic_muon}). Hits from a muons have approximatively the same time offset with respect to a trigger. To separate the true hits from the noise, a cut on the time difference between a bar hit and the trigger is applied. A thorough study of the crosstalk was conducted and is presented in section~\ref{sec_xt}.
+ 
+Figure~\ref{fig:tot_vs_deltat} shows the time and time-over-threshold structure of hits recorded in the multi-anode photomultiplier for the whole sample of cosmic data. The hits come prior to the trigger in the readout chain due to the delay in the logic box. Time walk affects the timing so that the lower amplitude signals come later on average. The distinctive spike present at $\sim15$\,ADC counts in the time-over-threshold distribution is a feature of the digitization method.
+
+\begin{figure}
+ \centering
+ \begin{minipage}[b]{.49\textwidth}
+  \centering
+  \includegraphics[width=.9\textwidth]{tot_vs_deltat_log_scale_2D.png}
+  \caption{Energy and time structure of the hits recorded in the multi-anode photomultipliers for cosmic muons (MIP signals).}
+  \label{fig:tot_vs_deltat}
+ \end{minipage}
+ \hfill
+ \begin{minipage}[b]{.49\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{plane_charge_hist.png}
+  \caption{Distribution of the charge recorded in the single-anode photomultipliers for cosmic muons (MIP signals).}
+  \label{fig:plane_charge}
+ \end{minipage}
+\end{figure} 
+
+The single-anode photomultipliers measure total charge in planes. The readout boards store waveforms of signals associated to triggers within a certain acquisition window. These waveforms are integrated in a signal window off-line taking into account the pedestal positions to compute the total plane charge, as shown for the whole cosmic data sample in figure~\ref{fig:plane_charge}.
+
+\subsubsection{PMT Calibration}\label{sec:calib}
+A thorough charge calibration was performed shortly after completion of the detector. For each cosmic event, planes with a single MAPMT channel time-over-threshold, $T_i$, and its corresponding SAPMT plane charge, $Q_S^i$, are recorded. The charge on the MAPMT side, $Q_M^i$ is reconstructed using the exponential law $Q_M^i=\exp(aT_i+b)$, with $a,b$ fitted separately. Provided these measurements, a calibration constant is produced for each MAPMT and SAPMT channel through
+\begin{equation}
+\epsilon_M^i=\frac{\overline{Q_M^i}}{\frac{1}{N}\sum_{i}\overline{Q_M^i}},\,\epsilon_S^i=\frac{\overline{Q_S^i}}{\frac{1}{N}\sum_{i}\overline{Q_S^i}}
+\end{equation}
+with $\overline{Q_M^i}, \overline{Q_S^i}$ the average charges measured charge in channel $i$ of the two PMTs. Provided calibration, each charge measured is adjusted by dividing it by its corresponding calibration constant.
+
+The measurements obtained for the 5664 channels of the EMR are represented in figure~\ref{fig:calib}. The figure compiles the the mean and median charges recorded in the MAPMT and SAPMT for each channel and each plane. These values are used to compile the calibration constants. The process revealed only 5 dead channels ($\sim$0.2\,\% of the detector) all located in plane 34 but an otherwise very efficient detector.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{calibration_charge_distrib.png}
+\caption{Results of the first round of calibration soon after the EMR was powered on}
+\label{fig:calib}
+\end{figure}
+
 \subsection{Cosmic-based channel mismatch analysis}\label{sec:ch_mismatch}
 
 The design of the EMR, involving the connection of external clear fibres to internal WLS fibres \cite{emr_design_change}, leaves room for human error in matching the two correctly.
@@ -456,7 +508,7 @@ An analysis was designed to verify the consistency of the cabling across the 283
 
 Cosmic muons are particularly suited for this procedure as they traverse the whole detector without stopping and provide full coverage. At the time of data taking, the detector was positioned upright, planes perpendicular to the ground. Two pairs of planes (15--16 and 31--32) were used as particle triggers in coincidence with a software 3\,ms spill gate. Data was taken for 60 hours and yielded $\sim2.23\times10^5$ particle triggers.
 
-Time-over-threshold measurements were recorded along with their timestamps in the 2832 channels for each trigger. Four dead channels were unveiled in plane 34. The amount of hits recorded in each bar is of order $\sim10^3$.
+Time-over-threshold measurements were recorded along with their timestamps in the 2832 channels for each trigger. Five dead channels appear in plane 34. The amount of hits recorded in each bar is of order $\sim10^3$.
 
 Two cuts are applied to the data sample in order to rid the muon tracks of artificial hits caused by crosstalk and noise. Crosstalk signals represent a small fraction of the total light yield and hence are rejected by placing a lower limit on the time-over-threshold. Restricting the delay between the trigger time and the hit time to a small interval gets rid of most of the noise.
 
@@ -526,9 +578,9 @@ The LED driver was tuned with a variety of voltages ranging from 11.0 V to 22.0 
 \end{figure}
 
 
-The first parameter that characterizes the crosstalk is the charge ratio, $R_Q^i$, between the signal amplitude in an adjacent channel $i$ and the primary amplitude in the test channel. The charge is not measured directly but is related to the time-over-threshold through $Q=e^{a\times \mathrm{ToT}+b}$. The parameters of the exponential are fitted for each plane to the relation between the single-anode photomultiplier charge and the time-over-threshold in the test channel. The ratio subsequently reads
+The first parameter that characterizes the crosstalk is the charge ratio, $R_Q^i$, between the signal amplitude in an adjacent channel $i$ and the primary amplitude in the test channel. The charge is not measured directly but is related to the time-over-threshold through $Q=\exp[a\mathrm{ToT}+b]$. The parameters of the exponential are fitted for each plane to the relation between the single-anode photomultiplier charge and the time-over-threshold in the test channel. The ratio subsequently reads
 \begin{equation}
-R_Q^i=\frac{Q_i}{Q_0}=\frac{e^{a\times ToT_i+b}}{e^{a\times ToT_0+b}}=e^{a(ToT_i-ToT_0)}.
+R_Q^i=\frac{Q_i}{Q_0}=\frac{\exp[aToT_i+b]}{\exp[aToT_0+b]}=\exp\left[a(ToT_i-ToT_0)\right].
 \end{equation}
 
 The ratio is measured for the highest achievable LED voltage setting as the resolution evolves as $1/\sqrt{Q}$. The ratio measured in the 192 readout channels (directly adjacent N,S,W,E channels of each plane) is represented in figure~\ref{fig:ratio_dist}. The fraction of the original signal that typically leaks in adjacent channels is $4.49\pm0.11\,\%$.
