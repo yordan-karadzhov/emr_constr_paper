@@ -430,40 +430,51 @@ installation in the detector.
  \label{fig:tot_feb_dbb_test}
 \end{figure}
 
-\subsection{Examining the performance with the LED calibration system}\label{sec:cosmic_perf}
+\subsection{Examining the performance with the LED calibration system}\label{sec:led_perf}
 After the assembly was completed, the detector was fully powered and tested during a few days of LED and cosmics data collection. As described above,
-the detector is equipped with a build-in LED system for calibration.  Light is transported from a LED driver through 96 clear fibres to each SAPMT and to
-one specific channel of each MAPMT (test channel). The LED driver was tuned with a variety of voltages ranging from 11.0 V to 22.0 V by steps of 0.5V. For
-each setting, 10000 pulses were recorded. The mean ToT in the test channel of a MAPMT is represented as a function of the LED driver voltage in Figure
+the detector is equipped with a built-in LED system for calibration.  Light is transported from a LED driver through 96 clear fibres to each SAPMT and to
+one specific channel of each MAPMT (test channel). 
+
+The LED driver was tuned with a variety of voltages ranging from 11.0 V to 22.0 V by steps of 0.5V. For
+each setting, 10000 pulses were recorded. The mean time-over-threshold in the test channel of an MAPMT is represented as a function of the LED driver voltage in Figure
 \ref{fig:voltage}. The green area represents the voltage region for which the recorded ToT is consistent with the signature of a minimum ionizing particle.
 
 \begin{figure}[htr!]
+  \begin{minipage}[b]{.48\textwidth}
    \centering
-   \includegraphics[width=.49\textwidth]{settings.png}
-   \caption{Mean ToT in the test channel as a function of the LED driver voltage.}
+   \includegraphics[width=\textwidth]{settings.png}
+   \caption{Mean time-over-threshold (ToT) in the test channel as a function of the LED driver voltage. The fit shows a logarithmic relation of the form ToT$=p_0\ln\left[p_1V+p_2\right]$.}
    \label{fig:voltage}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{.48\textwidth}
+   \centering
+   \includegraphics[width=\textwidth]{qvstot.png}
+   \caption{Plane charge as a function of time-over-threshold for different settings. The error bars represent the distributions RMS. The fit shows a relation of the form $Q=\exp(a$ToT$+b)$.}
+   \label{fig:charge_tot}
+   \end{minipage}
 \end{figure}
 
 The collected data was used to investigated the dependence between the ToT measurement and the original total charge of the MAPMT signal. This can be done,
 assuming that the total charge of the signal in the test channel of the MAPMT is proportional to the total charge $Q$, recorded by the SAPMT when both receive
 light from the same LED pulse. An exponential behaviour of the form
 \begin{equation}
- Q=e^{(a\times ToT+b)}
+ Q=\exp\left[a\times ToT+b\right]
  \label{exp}
 \end{equation}
-is expected, with $a$ and $b$ being two unknown parameters. The parameter $a$ givs the slope of the exponential in log scale and depends on the EMR 
+is expected, with $a$ and $b$ being two unknown parameters. The parameter $a$ gives the slope of the exponential in log scale and depends on the EMR 
 characteristics such as the scintillation time constant, the FEB shaping function or the threshold level. As a result, we expect this parameter to be
 constant for each plane with small variations. The parameter $b$, on the other hand, depends on the two PMTs gain and can vary significantly from one
-plane to another. These two parameters were obtained experimentally by fitting the relation $Q$ vs. ToT for each individual plane of the detector.
+plane to another. These two parameters were obtained experimentally by fitting the relation $Q$ vs. ToT for each individual plane of the detector. Figure~\ref{fig:charge_tot} shows the exponential relation between time-over-threshold and charge in the one of the planes of the EMR.
 
 \subsection{Examining the performance with cosmic rays}\label{sec:cosmic_perf}
 Cosmic rays present an ideal source of particles that can be used to characterize, debug and tune the detector. Cosmic rays that reach the detector are
 typically multi-GeV muons that traverse the EMR without stopping. An externally generated 3\,ms signal was used in order to reproduce the timing structure
-of the so called Spill gate signal, used by the MICE DAQ system. A coincidence between the SAPMT signals from two planes and the Spill gate signal was used
+of the "Spill" gate signal, used by the MICE DAQ system. A coincidence between the SAPMT signals from two planes and the Spill gate signal was used
 as a trigger.
 
 The EMR planes were perpendicular to the ground at the time of this test. Data was taken for 60 hours and yielded $\sim2.23\times10^5$ triggers. The raw
-measurements of the EMR comprise the hit time and ToT for each bar and the integrated plane charge. The two planes used as trigger did not record a plane
+measurements of the EMR comprise the hit time and time-over-threshold, ToT, for each bar and the integrated plane charge. The two planes used as trigger did not record a plane
 charge. The amount of hits recorded in each bar was of order $\sim10^3$.  The test revealed only 5 dead channels ($\sim$0.2\,\% of the detector). A typical
 cosmic event is shown in Figure~\ref{fig:cosmic_muon}. 
 
@@ -476,26 +487,25 @@ with respect to the trigger and plane charge.}
 \end{figure}
 
 \subsubsection{Cosmic muon signature}\label{sec:cosmic_sig}
-Cosmic muons are minimum ionizing particles and hence deposit on average the same amount of energy in each plane. The muon typically hits two triangular
+Cosmic muons are minimum ionizing particles and hence deposit on average the same amount of energy per unit length. The muon typically hits two triangular
 bars in a plane, by design. The additional hits come either from crosstalk or noise (e.g. third hit in plane 26 in figure~\ref{fig:cosmic_muon},
-top-left). All hits from muons have approximatively the same time offset with respect to the trigger. To separate the true hits from the noise, a cut on
+top-left). All hits from cosmic muons have approximatively the same time offset with respect to the trigger. To separate the true hits from the noise, a cut on
 the time difference between a bar hit and the trigger was applied. A thorough study of the crosstalk was conducted and is presented in section~\ref{sec_xt}.
  
 Figure~\ref{fig:tot_vs_deltat} shows the time and ToT structure of the hits recorded in the MAPMT for the whole sample of cosmic data. The hits
 come prior to the trigger in the readout chain due to the delay in the logic box. Time walk affects the timing so that the lower amplitude signals come
-later on average. The distinctive spike present at $\sim15$\,ADC counts in the ToT distribution is an artefact, originated from the nonlinear connection
-between the ToT measurement and the total charge of the original analog signal.
+later on average. The distinctive spike present at $\sim15$\,ADC counts in the ToT distribution is a feature of cosmic data acquired with the detector planes perpendicular to the ground and the non-linear connection between charge and ToT.
 
 \begin{figure}
  \centering
- \begin{minipage}[b]{.49\textwidth}
+ \begin{minipage}[b]{.48\textwidth}
   \centering
   \includegraphics[width=.9\textwidth]{tot_vs_deltat_log_scale_2D.png}
   \caption{Energy and time structure of the hits recorded in the MAPMT for cosmic muons (MIP signals).}
   \label{fig:tot_vs_deltat}
  \end{minipage}
  \hfill
- \begin{minipage}[b]{.49\textwidth}
+ \begin{minipage}[b]{.48\textwidth}
   \centering
   \includegraphics[width=\textwidth]{plane_charge_hist.png}
   \vspace{1mm}
@@ -513,13 +523,13 @@ The EMR is susceptible to two types of crosstalk: optical crosstalk, i.e. a sing
 crosstalk, i.e. a photo-electron leaking from a dynode to an adjacent accelerating structure. An analysis was developed in \cite{emr_xt, Francois} to evaluate the
 significance of this phenomenon.
 
-Cosmic or beam data are poorly suited for this analysis. A real particle often hits two bars or more within the same plane which makes it impossible to disentangle
+Cosmic or beam data are poorly suited for this analysis. A real particle often hits two bars or more within each plane which makes it impossible to disentangle
 real signals from crosstalk in neighbouring channels. An LED calibration system is a more reliable tool to drive the analysis. The test channel, connected to the LED
 light source, has four directly adjacent channels: top (N), bottom (S), left (W) and right(E). This method ensures that hits in the adjacent channels are caused
 by crosstalk only.
 
 The first parameter that characterizes the crosstalk is the charge ratio, $R_Q^i$, between the signal amplitude in an adjacent channel $i$ and the primary
-amplitude in the test channel. As explained already, the charge is not measured directly but is related to the ToT through Equation (\ref{exp}). The ratio
+amplitude in the test channel. As explained already, the charge is not measured directly but is related to the ToT through equation~\ref{exp}. The ratio
 subsequently reads
 \begin{equation}
 R_Q^i=\frac{Q_i}{Q_0}=\frac{\exp[aToT_i+b]}{\exp[aToT_0+b]}=\exp\left[a(ToT_i-ToT_0)\right].
@@ -558,7 +568,7 @@ design requirements.
 \end{figure}
 
 The measurement of the crosstalk rate in the adjacent channels also provides a measurement of misalignment of the MAPMT mask with respect to the fibre bundle.
-If a mask is shifted, light is more likely to leak and create signals is the channel towards which it is offset. The centre of the mask with respect to the
+If a mask is shifted, light is more likely to leak and create signals in the channel towards which it is offset. The centre of the mask with respect to the
 centre of fibre bundle is computed through
 
 \begin{equation}
@@ -571,27 +581,31 @@ There is a noticeable cluster around $(-0.3,0.3)$ but nothing that could impair 
 
 \subsection{Cosmic-based channel mismatch analysis}\label{sec:ch_mismatch}
 
-The design of the EMR, involving the connection of external clear fibres to internal WLS fibres, leaves room for human error in matching the two correctly.
-A dedicated analysis was designed in order to verify the consistency of this connection across the 2832 bars in the detector. This analysis
-\cite{emr_xt, Francois} uses the distance between each bar hit and its particle track as a tool to estimate the likelihood of mismatch. A mismatched channel is
+The design of the EMR, involving the connection of external clear fibres to internal WLS fibres~\cite{emr_design_change}, leaves room for human error in matching the two correctly.
+A dedicated analysis was designed in order to verify the consistency of this connection across the 2832 bars in the detector. 
+
+This analysis~\cite{emr_xt, Francois} 
+uses the distance between each bar hit and its particle track as a tool to estimate the likelihood of mismatch. A mismatched channel is
 not reconstructed in the right location and is, on average, significantly less consistent with the other measurements in a reconstructed particle track.
 Cosmic muons were particularly suited for this procedure as they traverse the whole detector in straight lines, without stopping and provide full coverage.
 When the data sample used in this analysis was recorded, the EMR was positioned up right with planes vertically oriented. Two cuts are applied to the data sample
-in order to rid the muon tracks of artificial hits caused by crosstalk and noise. Crosstalk signals were rejected by placing a lower limit on the ToT measurement.
-Restricting the delay between the trigger time and the hit time to a small interval was used to rid of most of the noise. To reconstruct tracks and calculate
+in order to rid the muon tracks of artificial hits caused by crosstalk and noise. Crosstalk signals were rejected by placing a lower limit on the ToT measurement (ToT$>$5).
+Restricting the delay between the trigger time and the hit time to a small interval was used to rid of most of the noise (-100$<\Delta t<$-80 ADC counts). 
+
+To reconstruct tracks and calculate
 the distance of each hit from its particle trail, the hits were
-split into two projections $qz$, $q=x,y$. The plane ID of the channel hit provided the $z$ coordinate and the bar ID provided either $x$ or $y$ coordinates,
+split into two projections $qz$, $q=x,y$. The plane ID of the channel hit provides the $z$ coordinate and the bar ID provides either the $x$ or $y$ coordinates,
 depending on the plane orientation. The $(q_i,z_i)$ coordinates were those of the barycentre of the triangular section or the bar corresponding to the hit. For
 a linear fit $q=a_qz+b_q$, the absolute distance between a hit $(q_i,z_i)$ and the track within a plane reads $\Delta q_i=|q_i-(a_qz_i+b_q)|$. For intuitiveness,
 distances are expressed in bar units ($\mathrm{b.u.}$) in the following developments. A $\mathrm{b.u.}$ corresponds to the height of the triangular section or
 equivalently to the half width of its base.
 
 The critical secondary variables, measured for each channel are the ratios of mismatch, $R_i$. Given an integer $i$, the ratio $R_i$ corresponds to the fraction
-of the sample for which the bar is within $i\pm2/3$ $\mathrm{b.u.}$ off-track. For a distance distribution $f(\Delta y)$, the ratio is defined as
-
+of the sample for which the bar is within $i\pm2/3$ $\mathrm{b.u.}$ off-track. For a distance distribution $f(\Delta)$, the ratio is defined as
 \begin{equation}
-R_i=\frac{\int_{i-2/3}^{i+2/3}f(\Delta y)\mathrm{d}(\Delta y)}{\int_{0}^{2/3}f(\Delta y)\mathrm{d}\Delta y+\int_{i-2/3}^{i+2/3}f(\Delta y)\mathrm{d}\Delta y}.
+R_i=\frac{\int_{i-\sigma}^{i+\sigma}f(\Delta)\mathrm{d}\Delta}{\int_{0}^{\sigma}f(\Delta)\mathrm{d}\Delta+\int_{i-\sigma}^{i+\sigma}f(\Delta)\mathrm{d}\Delta}.
 \end{equation}
+with $\sigma=2/3\,\mathrm{b.u.}$, an arbitrary overlapping uncertainty on the point.
 
 For instance, the ratio $R_1$ represents the probability of a bar of being mismatched by exactly 1\,$\mathrm{b.u.}$, i.e. to be swapped with an adjacent bar.
 It is shown in \cite{Francois} that $R_i$ is theoretically estimated to take values summarized in table~\ref{tab:mismatch_ratio} for different scenarios.
@@ -637,37 +651,32 @@ channel. The results strongly reject any mismatch at this level.
 
 \subsection{PMT Calibration}\label{sec:calib}
 A thorough charge calibration was performed shortly after completion of the detector. Cosmic data was used and the charge on the MAPMT side, $Q_M^i$ was
-reconstructed by using Equation (\ref{exp}). Provided these measurements, a calibration constant is produced for each MAPMT and SAPMT channel through
+reconstructed by using equation~\ref{exp}. Provided these measurements, a calibration constant is produced for each MAPMT and SAPMT channel through
 \begin{equation}
-\epsilon_M^i=\frac{\overline{Q_M^i}}{\frac{1}{N}\sum_{i}\overline{Q_M^i}},\,\epsilon_S^i=\frac{\overline{Q_S^i}}{\frac{1}{N}\sum_{i}\overline{Q_S^i}}
+\epsilon_M^i=\frac{\overline{Q_M^i}}{\frac{1}{N}\sum_{j=1}^N\overline{Q_M^j}}\ , \hspace{10mm} \epsilon_S^i=\frac{\overline{Q_S^i}}{\frac{1}{N}\sum_{j=1}^N\overline{Q_S^j}},
 \end{equation}
+with $\overline{Q}$ the average charges measured in the channel and N the total number of channels under calibration. The indices $M$ and $S$ stand for MAPMT
+and SAPMT, respectively. Provided calibration, each charge measured is corrected by dividing it by its corresponding calibration constant.
 
-\begin{equation}
-\epsilon_M^i=\frac{\overline{Q_M^i}}{\frac{1}{N}\sum_{j=1}^N\overline{Q_M^j}}\ , \hspace{15mm} \epsilon_S^i=\frac{\overline{Q_S^i}}{\frac{1}{N}\sum_{j=1}^N\overline{Q_S^j}}
-\end{equation}
-
-with $\overline{Q}$ the average charges measured in the channel. N is the total number of channels under calibration. The index $M$ stands for MAPMT
-and $S$ stands for SAPMT respectively. Provided calibration, each charge measured is adjusted by dividing it by its corresponding calibration constant.
-
-The measurements obtained for the 5664 channels of the EMR are represented in figure~\ref{fig:calib}. The figure compiles the the mean and median charges
+The measurements obtained for the 5664 channels of the EMR are represented in figure~\ref{fig:calib}. The figure compiles the mean charges
 recorded in the MAPMT and SAPMT for each channel and each plane. These values are used to compile the calibration constants.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=\textwidth]{calibration_charge_distrib_cut.png}
-\caption{Results of the first round of calibration soon after the EMR was powered on}
+\caption{Distributions of the first round of calibration. From left to right: mean MAPMT bar charge, mean SAPMT bar charge, mean MAPMT plane charge and mean SAPMT plane charge.}
 \label{fig:calib}
 \end{figure}
 
 \section{Transportation and installation at Rutherford Lab}
 
 The total weight of the EMR detector is 2.5 tonnes. Therefore a special care was taken to insure safety and shock-free transportation of the detector.
-Namely, the detector was attached to special shock absorbers designed to withstand this weight and allow for shock absorption in all three directions. The
-shock absorbers were then attached to a pallet by which the detector was handled. It was placed in a truck and transported from University of Geneva to
-Rutherford Lab (Didcot, Oxfordshire, UK) over more than 1100 kilometres. 
+The detector was attached to special shock absorbers designed to withstand its weight and allow for shock absorption in all three directions. The
+shock absorbers were then attached to a pallet by which the detector was handled. It was placed in a truck and delivered from the University of Geneva to the
+Rutherford Appleton Laboratory (Didcot, Oxfordshire, UK) in September 2013.
 
-Once delivered to the Rutherford Lab the EMR detector was installed in the MICE hall and positioned vertically at the end of existing MICE beamline. Later,
-it was exposed to a beam which parameters were varied in order to achieve different beam compositions and momenta. This data was used to verify the designed
+Once delivered, the EMR detector was installed in the MICE hall and positioned vertically at the end of the existing MICE beamline.
+It was later exposed to a beam which parameters were varied in order to achieve different beam compositions and momenta. This data was used to verify the designed
 functionality of the detector, i.e. the ability to distinguish different particle types (muons, electrons and pions) and to measure their ranges
 \cite{performance}. 
 
