@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{gensymb}
 \usepackage{amsmath}
+\usepackage{tikz-timing}
 
 \setlength{\textwidth}{475pt}
 \setlength{\textheight}{660pt}
@@ -28,14 +29,15 @@ The Electron-Muon Ranger (EMR) is a fully-active tracking-calorimeter installed 
 Cooling Experiment (MICE). The experiment will demonstrate ionization cooling, an essential technology needed
 for the realization of a Neutrino Factory and/or a Muon Collider. The EMR is designed to measure the properties of low
 energy beams composed of muons, electrons and pions, and perform the identification particle-by-particle. The detector consists of 48 orthogonal layers of 59 triangular scintillator
-bars. The readout is based on FPGA custom made electronics and commercially available modules. This article describes
+bars. 
+The readout is implemented using FPGA-based custom electronics and commercially available modules. This article describes
 the construction of the detector from its design up to its commissioning with cosmic data.
 \end{abstract}
 
 \section{Introduction}
 \subsection{Ionization cooling}
 The Neutrino Factory~\cite{NFReference, nf} based on a high-energy muon storage-ring is the ultimate tool to study the neutrino mixing matrix
-and is established as the best facility to discover, and study the possible leptonic CP violation. It will produce the
+and is established as the best facility to discover, and study the possible leptonic CP violation. It is capable of producing the
 most intense, pure and focused neutrino beam ever achieved and is also the first step towards a $\mu^+ \mu^-$ collider~\cite{Neuffer:multitev, Palmer:1996gs}.
 The Neutrino Factory accelerator design uses muons as a neutrino source. A proton beam bombards
 a target to produce pions. These pions are captured and focused in a high-field solenoid channel and decay
@@ -64,7 +66,7 @@ The international Muon Ionization Cooling Experiment (MICE) \cite{MICEweb} is un
 Laboratory (UK). The goal of the experiment is to build a section of a cooling channel that can demonstrate the principle
 of ionization cooling.
 
-Since energy loss and multiple Coulomb scattering are momentum dependent, so is the ionization cooling effect. MICE uses variety of muon beams of limited intensity and central momenta in the
+Since energy loss and multiple Coulomb scattering are momentum dependent, so is the ionization cooling effect. MICE uses a variety of muon beams of limited intensity and central momenta in the
 range 140--240\,MeV/$c$ with a spread of $\sim$\,20\,MeV/$c$. These muon beams are generated using a titanium target
 \cite{target} dipped into the ISIS proton beam \cite{isis}. Secondary and tertiary particles are captured,
 momentum-selected and transported to the cooling section by a system of magnets: a 5\,T superconducting
@@ -72,8 +74,8 @@ decay solenoid, two dipoles, nine quadrupoles and a mechanism for inflation of t
 
 The cooling section of MICE is similar to the one of the International Design Study
 for the Neutrino Factory and is schematically represented in figure~\ref{fig:mice}. It consists of one primary lithium-hydride (LiH) absorber, two secondary absorbers,
-two focus coils and two 201 MHz RF cavities. The two superconducting focus-coil modules provide strong focusing at the
-absorber, ensuring that the transverse betatron function is minimised at this position and enhancing the cooling effect. 
+two focus coils and two 201 MHz RF cavities. The two superconducting focus-coil modules provide strong focusing at the primary
+absorber, ensuring that the transverse betatron function is minimised at this position and enhancing the cooling effect. The secondary absorbers provide additional cooling. 
 Each particle is detected individually by two identical Scintillating fibre trackers in 4\,T
 solenoids, situated upstream and downstream of the cooling section. The beam emittance is reconstructed by measuring the
 position and momentum ($x,y,p_x,p_y,p_z$) of each muon.
@@ -96,7 +98,7 @@ MICE will measure the normalised transverse emittance $\epsilon_N$ with a precis
 $\sigma_{\epsilon_N}/\epsilon_N \sim 0.1 \%$ and is expected to witness a $\sim\,$6\,\% cooling for a muon beam with a nominal momentum
 of 200\,MeV/$c$ and a 4D input normalised emittance of $\epsilon_N = 5.8$\,$\pi\cdot$mm$\cdot$rad.
 
-\subsection{Electron-Muon Ranger (EMR)}
+\subsection{EMR}
 The EMR is a fully-active scintillator detector. It can be classified as tracking-calorimeter as its granularity allows for track
 reconstruction. The primary purpose of the detector is to distinguish muons from their decay products, rejecting events in which
 the muon decayed in-flight in the cooling section.  This allows for the selection of a muon beam with contamination
@@ -106,7 +108,7 @@ The construction of the detector started in the early 2011 and in October 2013 t
 during one month of dedicated data-taking at RAL. The detector was upgraded in October 2014, including the replacement of the single-anode
 photo-multiplier tubes and the installation of a new high-voltage power supply.
 
-\section{Design}
+\section{EMR design concept}
 The EMR is built of triangular scintillator bars arranged in planes. 
 % A drawing of one plane is shown on figure~\ref{fig:emr_plane}.
 One plane contains 59 bars and covers an area of 1.27~m$^2$. Each even bar is rotated by 180 degrees with respect to the odd one.
@@ -123,10 +125,10 @@ configuration there does not leave dead area for particles crossing a plane with
 
 The light, produced when a particle crosses a bar, is collected by a wave-length shifting (WLS) fibre glued inside the bar. 
 At both ends, the WLS fibre is coupled to clear fibres that transport the light to a photo-multiplier
-(PMT). The clear fibres are protected with rubber sleeves and packed in aluminium fibre boxes as drawn in figure 
+tube (PMT). The clear fibres are protected with rubber sleeves and packed in aluminium fibre boxes as drawn in figure 
 \ref{fig:clear_fibre_package}. In order to increase the bending radius, which affects light attenuation, each fibre has an individual
-length. The two bunches of clear fibres coming from the two sides of a plane are glued into different types of connectors~\ref{fig:pmt_connectors}.
-One is designed to match a multi-anode PMT and the other a single-anode PMT.
+length. The two bunches of clear fibres coming from the two sides of a plane are glued into different types of connectors (figure~\ref{fig:pmt_connectors}).
+One is designed to interface with a multi-anode PMT and the other with a single-anode PMT.
 
 \begin{figure}[ht]
  \centering
@@ -142,9 +144,9 @@ One is designed to match a multi-anode PMT and the other a single-anode PMT.
  \label{fig:pmt_connectors}
 \end{figure}
 
-Two planes attached to each other via aluminum profiles form a rigid structure called module (figure~\ref{fig:emr_module}). 
+Two planes attached to each other via aluminum profiles form a rigid structure called a module (figure~\ref{fig:emr_module}). 
 The full detector contains 24 modules as shown in figure~\ref{fig:emr_full_cad_model}. Panels cover all sides of the detector
-in order to insure a light-tightness. The signals coming from a multi-anode PMT are read out and processed by a dedicated front-end board
+in order to ensure light-tightness. The signals coming from a multi-anode PMT are read out and processed by a dedicated front-end board
 attached directly to the fibre box as shown in figure~\ref{fig:emr_module}. The single anode PMTs are equipped with a
 voltage divider and the analog signal is sent outside the detector for digitization.
 
@@ -164,7 +166,7 @@ voltage divider and the analog signal is sent outside the detector for digitizat
 \end{figure}
 
 A calibration system was installed inside the enclosure of the detector in order to monitor the drift of the gain and the quantum
-efficiency of the PMTs. This system is made of a LED driver distributing light homogeneously to 100 fibre. Each fibre box is
+efficiency of the PMTs. This system is made of an LED driver distributing light homogeneously to 100 fibres. Each fibre box is
 connected to one of the calibration fibres through a connector. Inside a fibre box a clear fibre connects the calibration
 fibre to the PMT (see figure~\ref{fig:clear_fibre_package}).
 
@@ -173,14 +175,19 @@ and three configuration cables in total. A support frame is designed to withhold
 In order to protect the front-end electronics from the magnetic field of the spectrometer solenoid,  a shielding plate is mounted on the side of the detector that faces the beam. The total weight of the detector is almost
 2.5\,tonnes.
 
-\subsection{Optical Elements}
+\subsection{Optical elements}
 The scintillator bars were manufactured at an extrusion facility at Fermilab~\cite{PlaDalmau:2001fr}. Each bar is 110\,cm long, has a triangular, 1.7\,cm high, 3.3\,cm wide section and is pierced with a 3\,mm hole to host a wavelength shifting fibre.
 The scintillator is made of polystyrene pellets\footnote{Dow Styron 663 W} as base, 1\% PPO\footnote{Scintillator, 2,5-diphenyloxazole,
 C$_{15}$H$_{11}$NO} as primary and 0.03\% POPOP\footnote{Wavelength shifter, 1,4-di-(5-phenyl-2-oxazolyl)-benzene, C$_{24}$H$_{16}$N$_{2}$O,
-spectrum peaks at 410 nm (violet)} as secondary fluor. Each bar is coated with TiO$_2$ reflector in order to increase the trapping efficiency. The light output of the scintillator was measured~\cite{PlaDalmau:2001fr} with a photo-multiplier (25\% quantum efficiency)
-and it is around 17 photo-electrons. 
+spectrum peaks at 410 nm (violet)} as secondary fluor. Each bar is coated with TiO$_2$ reflector in order to increase the trapping efficiency. 
 
-The WLS fibre glued inside each bar is a double-cladding 1.2\,mm fibre produced by Saint-Gobain Crystals~\cite{saintgobain}.
+Light yield studies have been performed on extruded plastic scintillators~\cite{PlaDalmau:2001fr}. 
+The measurements were carried out on 11.5-cm long rectangular extrusions
+(1\,cm $\times$ 2\,cm) with a hole in the middle for a green WLS fibre. The light yield test
+setup used an electron spectrometer with a $^{106}$Ru source whose 3\,MeV beam was momentum selected. The photomultiplier tube used was a Hamamatsu R2165 (25\,\% quantum efficiency) which has an
+excellent single photo-electron resolution. The mean light yield measured was of 2.05$\pm$0.09\,photo-electrons per signal.
+
+The BCF-20 WLS fibre glued inside each bar is a double-cladding 1.2\,mm fibre produced by Saint-Gobain Crystals~\cite{saintgobain}.
 The core material polystyrene with acrylic cladding. It has a larger numerical aperture of 0.58 compared to the 0.2--0.3
 of graded-index multi-mode fibres used in data communication. Their trapping efficiency is 3.5\,\%. The light is absorbed in the blue part of
 the visible spectrum and re-emitted in green. 
@@ -206,9 +213,9 @@ the light output of individual bars, and a single-anode PMT (SAPMT), recording t
 
 The MAPMT is a 64-channel PMT produced by Hamamatsu (model R5900-00-M64~\cite{hamamatsu_mapmt}, as pictured in
 figure~\ref{fig:mapmt}). The spectral response matches the peak emission frequency of the wavelength shifting fibre. It is 
-placed in a $\mu$-metal tube acting as additional shielding against the fringe magnetic filed.
+placed in a $\mu$-metal tube acting as additional shielding against the fringe magnetic field.
 The PMT is aligned with respect to the fibre connector in such a way that each fibre shines on one
-channel. It is important to measure the dimensions of the PMT and particularly the position of the anode matrix with respect to the
+PMT channel. It is important to measure the dimensions of the PMT and particularly the position of the anode matrix with respect to the
 PMT case. Figure~\ref{fig:mapmt_dimensions} shows the distributions of the measured dimensions (width and
 height) and displacements of the anode matrix for 53 MAPMTs. On average, the matrix is shifted by 0.5\,mm upwards, which was taken into account in the design of the
 MAPMT fibre connectors.
@@ -236,10 +243,15 @@ by Philips (model XP2972). A special selection procedure was developed in order 
 \cite{philips}. In 2014, during the upgrade of the detector, all Philips SAPMTs were replaced by new tubes produced by Hamamatsu (model R6427
 \cite{hamamatsu_mapmt}).
 
-\subsection{Electronics Layout}
-In MICE the spill is defined as the short period following a target dip in the ISIS proton beam. The maximum spill rate allowed by the
-MICE target system is $\sim\,$0.75\,Hz. The overall principle of the MICE Data Acquisition (DAQ) system is that, during the spill, the
-accumulated digital data is kept in local memory buffers and the readout is performed once at the end of the spill.
+\subsection{Electronics layout}
+
+A schematic layout of the EMR electronics is shown in figure~\ref{fig:EMR_electronics_layout}. The multi-anode PMT is connected via a flex cable
+to a front-end board (FEB), which processes the signals and sends them to a piggy-back digitizer-buffer board (DBB) for digitization and storage.
+The FEB is configured by the VME configuration board (VCB), which resides in the VME crate in the control rack. Each VCB is able to configure
+up to 16 FEBs, therefore three of them are required for the full detector. The DBBs are readout by groups of six. In each group the first DBB
+is a master and the other five are slaves. All six boards are daisy-chained via ethernet cable and the master is connected to a VME readout board
+(VRB), which transfers all the data from the six DBBs to the DAQ computer. In the whole detector there are 8 groups of DBBs, i.e. 8 VRBs are
+installed in the control rack. 
 
 \begin{figure}[htp!]
  \centering
@@ -249,13 +261,38 @@ accumulated digital data is kept in local memory buffers and the readout is perf
  \label{fig:EMR_electronics_layout}
 \end{figure}
 
-A schematic layout of the EMR electronics is shown in figure~\ref{fig:EMR_electronics_layout}. The multi-anode PMT is connected via a flex cable
-to a front-end board (FEB), which processes the signals and sends them to a piggy-back digitizer-buffer board (DBB) for digitization and storage.
-The FEB is configured by the VME configuration board (VCB), which resides in the VME crate in the control rack. Each board is able to configure
-up to 16 FEBs, therefore three of them are required for the full detector. The DBBs are readout by groups of six. In each group the first DBB
-is a master and the other five are slaves. All six boards are daisy-chained via ethernet cable and the master is connected to a VME readout board
-(VRB), which transfers all the data from the six DBBs to the DAQ computer. In the whole detector there are 8 groups of DBBs, i.e. 8 VRBs are
-installed in the control rack. 
+\subsubsection{Data acquisition system}
+The EMR has three modes of data taking: cosmic, LED pulser and MICE beam. In cosmic and LED data taking, a 3\,ms spill gate is software generated as frequently as the readout chain dead time allows it, i.e. at $\sim$\,50\,Hz. The cosmic trigger corresponds to a particle crossing a pair of adjacent planes within the spill gate and provides a rate of $\sim$\,7\,Hz, i.e one in seven spills. The LED trigger is generated by the 10\,kHz clock that drives the LED pulser and yields $\sim$\,30 triggers per spill.
+
+In MICE the spill is defined as the 1\,ms long period during which the target crosses the ISIS proton beam. The maximum spill rate allowed by the
+MICE target system is $\sim\,$0.78\,Hz. The Data Acquisition (DAQ) timing structure in MICE is schematically summarised in figure~\ref{fig:daq_timing}. 
+The overall principle of the system is that, during the spill, the
+accumulated digital data is kept in local memory buffers and the readout is performed once at the end of the spill. The maximum rate expected at the EMR is of order 100 triggers per spill.
+
+\begin{figure}[htp!]
+ \centering
+ \begin{tikztimingtable}
+  Machine start   	 	& H 0.5L N(A1) 39.5H \\
+  Target dip       		& H 25H N(A4) 4L N(A2) 11H \\
+  & \\
+  ISIS cycle     		& H 10H N(N1) 19L  0.5H N(N2) 10.5H \\
+  Start of spill   		& 1.5H N(B1) 0.5L 39H \\
+  DAQ gate	   			& H 25H N(B4) 4L 11H \\
+  Particle triggers	   	& H 25.2H 20{0.2C} 10.8H \\
+  DAQ trigger	     	& H 29H 0.5L 10.5H \\
+  DAQ busy		     	& H 29H N(B2) 5L N(A3) 6H \\
+  End of spill	     	& H 34H N(B3) 0.5L 5.5H \\
+  \extracode
+   \begin{pgfonlayer}{background}
+    \foreach \n in {1,...,4}
+     \draw [help lines] (A\n) -- (B\n);
+    \draw (N1) node[anchor=south]{Injection};
+    \draw (N2) node[anchor=south]{Extraction};
+   \end{pgfonlayer}
+ \end{tikztimingtable}
+ \caption{Data acquisition timing structure in MICE.}
+ \label{fig:daq_timing}
+\end{figure}
 
 \subsubsection{Front-End and Digitizer-Buffer Boards}
 
@@ -275,8 +312,8 @@ The analogue signals are fed into the chip where they are processed in parallel.
 a tunable slow shaper for analogue readout, a tunable fast shaper and a discriminator for digital.
 The MAROC ASIC provides parallel digital outputs forwarded to two high density connectors. The width of the
 discriminated signal represents the time-over-threshold measurement. One multiplexed analogue output is also provided and this output is digitized by
-an external ADC\footnote{Analog Devices AD9220}. It takes $\sim\,$10\,ms to process the multiplexed signals,
-too slow to keep up with the MICE DAQ duty cycle ($\sim\,$1\,ms spills). Only the fast time-over-threshold
+an external ADC\footnote{Analog Devices AD9220}. It takes of order 10\,$\mu$s to digitize the multiplexed signals,
+too slow to keep up with the MICE DAQ duty cycle (hundreds of triggers per 1\,ms spills). Only the fast time-over-threshold
 measurement is used and recorded.
 
 The function of the FPGA chip\footnote{Altera Cyclone II (EP2C35F484C8N)} is mainly to forward data from the MAROC to the DBB and to send configuration
@@ -285,10 +322,10 @@ power consumption of the board is about 3\,W and operates at 5\,V.
 
 The two essential roles of the DBB are to sample 63 of the channels coming from the FEB plus an external trigger signal and to store the accumulated
 digital data during the spill. It also transmits this data upon request from the acquisition system. The digitization starts when the board
-receives the "Spill Gate" signal from an external LEMO connector. The number of clock ticks from the begging of the spill to the leading edge
+receives the "Spill Gate" signal from an external LEMO connector. The number of clock ticks from the beginning of the spill to the leading edge
 and trailing edge of every discriminated signal coming from the FEB is recorded. The difference between two subsequent measurements represents the time-over-threshold of the original signal. 
 The clock sampling rate is 400\,MHz (2.5\,ns resolution). The external trigger signal is fed into one specific
-input channels and is treated as any other signal. This signal does not serve as a trigger for the DBB itself, since the board records continuously
+input channel and is treated as any other signal. This signal does not serve as a trigger for the DBB itself, since the board records continuously
 and all signals arriving within the spill gate are digitized and recorded. The timing of the trigger signal is important
 to identify the hits that belong to a given particle and to match them with other detectors. The board also
 calculates the width of each spill, counts the number of spills, the number of triggers in each spill and the number of hits in each channel.
@@ -375,7 +412,7 @@ connectors are polished on a bench, similar to the one used to polish all bar co
  \label{fig:fibre_bundles}
 \end{figure}
 
-\subsection{Quality Tests}\label{construction:subsec:quality_tests}
+\subsection{Quality assurance tests}\label{construction:subsec:quality_tests}
 
 Numerous quality test were implemented, in order to assure the best possible performance of the different components of the detector. 
 
@@ -525,7 +562,7 @@ significance of this phenomenon.
 
 Cosmic or beam data are poorly suited for this analysis. A real particle often hits two bars or more within each plane which makes it impossible to disentangle
 real signals from crosstalk in neighbouring channels. An LED calibration system is a more reliable tool to drive the analysis. The test channel, connected to the LED
-light source, has four directly adjacent channels: top (N), bottom (S), left (W) and right(E). This method ensures that hits in the adjacent channels are caused
+light source, has four directly adjacent channels on the MAPMT matrix: top (N), bottom (S), left (W) and right(E). A signal in any of these adjacent channels is guaranteed to be caused
 by crosstalk only.
 
 The first parameter that characterizes the crosstalk is the charge ratio, $R_Q^i$, between the signal amplitude in an adjacent channel $i$ and the primary
@@ -677,8 +714,7 @@ Rutherford Appleton Laboratory (Didcot, Oxfordshire, UK) in September 2013.
 
 Once delivered, the EMR detector was installed in the MICE hall and positioned vertically at the end of the existing MICE beamline.
 It was later exposed to a beam which parameters were varied in order to achieve different beam compositions and momenta. This data was used to verify the designed
-functionality of the detector, i.e. the ability to distinguish different particle types (muons, electrons and pions) and to measure their ranges
-\cite{performance}. 
+functionality of the detector, i.e. the ability to distinguish different particle types (muons, electrons and pions) and to measure their ranges~\cite{performance}. The EMR met its design requirement by providing an at least 99.8\,\% pure muon beam for MICE. It also reconstructed the momentum of muons in the range 100--280\,MeV/$c$ with a $\sim$\,3\,MeV/$c$ precision.
 
 \section*{Acknowledgement}
 The work described here was made possible by grants from Swiss National Science Foundation, in the framework of the SCOPES programme and the European Community
