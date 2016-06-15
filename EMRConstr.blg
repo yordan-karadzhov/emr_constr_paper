@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: EMRConstr.aux
+The style file: unsrt.bst
+Database file #1: EMRConstr.bib
+Warning--empty institution in NFReference
+Warning--empty institution in nf
+Warning--empty author in MICEweb
+Warning--empty year in MICEweb
+Warning--empty year in isis
+Warning--empty institution in MICE_PID
+Warning--empty journal in Bertoni:tof2
+You've used 28 entries,
+            1791 wiz_defined-function locations,
+            596 strings with 7150 characters,
+and the built_in function-call counts, 4716 in all, are:
+= -- 389
+> -- 208
+< -- 0
++ -- 84
+- -- 56
+* -- 243
+:= -- 815
+add.period$ -- 88
+call.type$ -- 28
+change.case$ -- 30
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 213
+empty$ -- 487
+format.name$ -- 56
+if$ -- 1027
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 20
+newline$ -- 147
+num.names$ -- 27
+pop$ -- 68
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 103
+stack$ -- 0
+substring$ -- 171
+swap$ -- 24
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 7
+while$ -- 37
+width$ -- 30
+write$ -- 294
+(There were 7 warnings)

@@ -1,0 +1,160 @@
+\begin{thebibliography}{10}
+
+\bibitem{NFReference}
+S.~Ozaki, R.~Palmer, M.~Zisman, and J.~Gallardo.
+\newblock {Feasibility Study-II of a Muon-Based Neutrino Source}.
+\newblock Technical report, 2001.
+\newblock BNL-52623.
+
+\bibitem{nf}
+S.~Choubey and \emph{et al.}
+\newblock {International Design Study for the Neutrino Factory, Interim Design
+  Report}.
+\newblock Technical report, 2011.
+
+\bibitem{Neuffer:multitev}
+D.~Neuffer.
+\newblock {Multi-TeV Muon Colliders}.
+\newblock {\em AIP Conf.Proc.}, 156:201--208, 1987.
+
+\bibitem{Palmer:1996gs}
+R.~Palmer, A.~Sessler, A.~Skrinsky, A.~Tollestrup, A.~Baltz, et~al.
+\newblock {Muon collider design}.
+\newblock {\em Nucl.Phys.Proc.Suppl.}, 51A:61--84, 1996.
+
+\bibitem{icool1}
+D.~Neuffer.
+\newblock Principles and applications of muon cooling.
+\newblock {\em Part. Accel.}, 14:75, 1983.
+
+\bibitem{MICEweb}
+Mice web site.
+\newblock {\em http://mice.iit.edu}, contains detailed information about the
+  experiment.
+
+\bibitem{target}
+C.~N.~Booth et~al.
+\newblock The design, construction and performance of the {MICE} target.
+\newblock {\em Journal of Instrumentation}, 8:P03006, 2013.
+
+\bibitem{isis}
+{ISIS} pulsed neutron and muon source at the {R}utherford~{A}ppleton
+  laboratory.
+\newblock web site.
+\newblock {\em http://www.isis.stfc.ac.uk}.
+
+\bibitem{TOFref}
+R.~Bertoni and \emph{et al.}
+\newblock {The design and commissioning of the MICE upstream time-of-flight
+  system}.
+\newblock {\em Nucl. Inst. Meth. A}, 615(1):14 -- 26, 2010.
+
+\bibitem{MICE_PID}
+M.~Rayner and M.~Bonesini.
+\newblock {The MICE PID Detector System}.
+\newblock Technical report, 2010.
+\newblock MICE-NOTE-304.
+
+\bibitem{Bertoni:tof2}
+R.~Bertoni, A.~Bonesini, A.~de~Bari, G.~Cecchet, Y~Karadzhov, and R.~Mazza.
+\newblock {The construction of the {MICE} {TOF}2 detector}.
+\newblock 2010.
+\newblock MICE-NOTE-DET-286.
+
+\bibitem{ruslan}
+R.~Asfandiyarov.
+\newblock Totally active scintillator tracker-calorimeter for the {M}uon
+  {I}onization {C}ooling {E}xperiment.
+\newblock {\em University of Geneva, PhD thesis}, 2014.
+
+\bibitem{PlaDalmau:2001fr}
+A.~Pla-Dalmau, A.~Bross, and K.~Mellott.
+\newblock {Low-cost extruded plastic scintillator}.
+\newblock {\em Nucl. Instrum. Meth.}, A466:482--491, 2001.
+\newblock FERMILAB-PUB-00-177-E.
+
+\bibitem{PlaDalmau:2005df}
+A.~Pla-Dalmau, A.~Bross, V.~Rykalin, and B.~Wood.
+\newblock {Extruded plastic scintillator for MINERvA}.
+\newblock {\em Nuclear Science Symposium Conference Record, IEEE}, 3, 2005.
+\newblock FERMILAB-CONF-05-506-E.
+
+\bibitem{saintgobain}
+Saint-Gobain Crystals.
+\newblock Scintillating fiber brochure.
+
+\bibitem{kuraray}
+Kuraray.
+\newblock Plastic scintillating fibers brochure.
+
+\bibitem{emr_design_change}
+R.~Asfandiyarov et~al.
+\newblock Modifications to {EMR} design.
+\newblock {\em MICE internal note}, 2011.
+\newblock MICE-NOTE-DET-357.
+
+\bibitem{hamamatsu_mapmt}
+Hamamatsu.
+\newblock Multianode photo-multiplier tubes {R}5900-00-{M}64 datasheet.
+
+\bibitem{harp}
+M.~G.~Catanesi et~al. [HARP~Collaboration].
+\newblock The {HARP} detector at the {CERN PS}.
+\newblock {\em Nucl. Instr. and Meth.}, (A 571):527, 2007.
+
+\bibitem{philips}
+R.~Asfandiyarov et~al.
+\newblock Selecting {P}hilips {XP} 2972 {P}hotomultiplier {T}ubes for the
+  {E}lectron {M}uon {R}anger ({EMR}).
+\newblock {\em MICE internal note}, 2012.
+\newblock MICE-NOTE-DET-383.
+
+\bibitem{Bolognini2011108}
+D.~Bolognini et~al.
+\newblock Tests of the {MICE} {E}lectron {M}uon {R}anger frontend electronics
+  with a small scale prototype.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 646(1):108
+  -- 117, 2011.
+
+\bibitem{maroc}
+S.~Franz and P.~Barrillon.
+\newblock Atlas alfa-measuring absolute luminosity with scintillating fibres.
+\newblock {\em Nuclear Instruments and Methods in Physics Research, Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  610(1):35--40, 2009.
+
+\bibitem{V1731}
+CAEN.
+\newblock V1731 4/8 ch. 8 bit 1000/500 ms/s {D}igitizer. {T}echnical
+  information manual.
+
+\bibitem{emr_elquality}
+R.~Asfandiyarov, A.~Blondel, F.~Drielsma, and Y.~Karadzhov.
+\newblock {E}lectron-{M}uon {R}anger ({EMR}) {E}lectronics {Q}uality {T}ests.
+\newblock {\em MICE internal note}, 2014.
+\newblock MICE-NOTE-DET-441.
+
+\bibitem{emr_xt}
+R.~Asfandiyarov, A.~Blondel, F.~Drielsma, and Y.~Karadzhov.
+\newblock Crosstalk and {M}isalignment in the {E}lectron-{M}uon {R}anger
+  ({EMR}).
+\newblock {\em MICE internal note}, 2014.
+\newblock MICE-NOTE-DET-440.
+
+\bibitem{Francois}
+F.~Drielsma.
+\newblock Electron {M}uon {R}anger ({EMR}) hardware characterization.
+\newblock {\em University of Geneva, Master thesis}, 2014.
+\newblock http://mice.iit.edu/phd/EMR\_hardware\_characterization.pdf.
+
+\bibitem{shockabsorbers}
+Vibrationmounts.
+\newblock http://vibrationmounts.com/RFQ/VM02019.htm.
+
+\bibitem{performance}
+D.~Adams et~al. MICE~collaboration.
+\newblock Electron-muon ranger: performance in the {MICE} muon beam.
+\newblock {\em Journal of Instrumentation}, 10:P12012, 2015.
+
+\end{thebibliography}

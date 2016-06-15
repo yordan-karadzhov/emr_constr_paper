@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Ionization cooling}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}MICE}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}EMR}{3}{subsection.1.3}
+\contentsline {section}{\numberline {2}EMR Design Concept}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Optical Elements}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Photo-detectors}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Electronics Layout}{8}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Front-End and Digitizer-Buffer Boards}{9}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}VME Configuration Board}{12}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}VME Read-Out Board}{12}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Flash ADC Board}{12}{subsubsection.2.3.4}
+\contentsline {subsection}{\numberline {2.4}Mechanics}{12}{subsection.2.4}
+\contentsline {section}{\numberline {3}Construction}{13}{section.3}
+\contentsline {subsection}{\numberline {3.1}Quality Assurance Tests}{14}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Examining the performance with the LED calibration system}{16}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Examining the performance with cosmic rays}{17}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Cosmic muon signature}{18}{subsubsection.3.3.1}
+\contentsline {subsection}{\numberline {3.4}LED-based crosstalk analysis}{19}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Cosmic-based channel mismatch analysis}{20}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}PMT Calibration}{22}{subsection.3.6}
+\contentsline {section}{\numberline {4}Transportation and installation at Rutherford Lab}{23}{section.4}
