@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.4.7)  6 JUN 2016 16:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.4.7)  22 JUN 2016 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1151,63 +1151,63 @@ Package pdftex.def Info: ./internal_dimensions.jpg used on input line 417.
 File: ./fiber_bundles.jpg Graphic file (type jpg)
 
 <use ./fiber_bundles.jpg>
-Package pdftex.def Info: ./fiber_bundles.jpg used on input line 442.
+Package pdftex.def Info: ./fiber_bundles.jpg used on input line 441.
 (pdftex.def)             Requested size: 430.20639pt x 95.57912pt.
 
 <./measurements_cut.jpg, id=348, 1301.86375pt x 525.965pt>
 File: ./measurements_cut.jpg Graphic file (type jpg)
 
 <use ./measurements_cut.jpg>
-Package pdftex.def Info: ./measurements_cut.jpg used on input line 465.
+Package pdftex.def Info: ./measurements_cut.jpg used on input line 464.
 (pdftex.def)             Requested size: 344.16641pt x 139.04298pt.
  [14 <./fiber_bundles.jpg>]
 <./one_planes.jpg, id=360, 2314.6475pt x 969.6225pt>
 File: ./one_planes.jpg Graphic file (type jpg)
  <use ./one_planes.jpg>
-Package pdftex.def Info: ./one_planes.jpg used on input line 480.
+Package pdftex.def Info: ./one_planes.jpg used on input line 479.
 (pdftex.def)             Requested size: 344.16641pt x 144.1647pt.
 
 [15 <./measurements_cut.jpg> <./one_planes.jpg>]
 <./pl1_tot1.jpg, id=368, 599.23875pt x 430.60875pt>
 File: ./pl1_tot1.jpg Graphic file (type jpg)
  <use ./pl1_tot1.jpg>
-Package pdftex.def Info: ./pl1_tot1.jpg used on input line 496.
+Package pdftex.def Info: ./pl1_tot1.jpg used on input line 495.
 (pdftex.def)             Requested size: 193.59155pt x 139.11171pt.
 
 <./pl1_tot2.jpg, id=369, 599.23875pt x 430.60875pt>
 File: ./pl1_tot2.jpg Graphic file (type jpg)
  <use ./pl1_tot2.jpg>
-Package pdftex.def Info: ./pl1_tot2.jpg used on input line 497.
+Package pdftex.def Info: ./pl1_tot2.jpg used on input line 496.
 (pdftex.def)             Requested size: 193.59155pt x 139.11171pt.
 
 <./pl2_tot1.jpg, id=370, 599.23875pt x 430.60875pt>
 File: ./pl2_tot1.jpg Graphic file (type jpg)
  <use ./pl2_tot1.jpg>
-Package pdftex.def Info: ./pl2_tot1.jpg used on input line 498.
+Package pdftex.def Info: ./pl2_tot1.jpg used on input line 497.
 (pdftex.def)             Requested size: 193.59155pt x 139.11171pt.
 
 <./pl2_tot2.jpg, id=371, 599.23875pt x 430.60875pt>
 File: ./pl2_tot2.jpg Graphic file (type jpg)
  <use ./pl2_tot2.jpg>
-Package pdftex.def Info: ./pl2_tot2.jpg used on input line 499.
+Package pdftex.def Info: ./pl2_tot2.jpg used on input line 498.
 (pdftex.def)             Requested size: 193.59155pt x 139.11171pt.
 
 <settings.png, id=373, 798.985pt x 574.145pt>
 File: settings.png Graphic file (type png)
  <use settings.png>
-Package pdftex.def Info: settings.png used on input line 518.
+Package pdftex.def Info: settings.png used on input line 517.
 (pdftex.def)             Requested size: 206.49722pt x 148.38934pt.
 
 <qvstot.png, id=374, 798.985pt x 574.145pt>
 File: qvstot.png Graphic file (type png)
  <use qvstot.png>
-Package pdftex.def Info: qvstot.png used on input line 526.
+Package pdftex.def Info: qvstot.png used on input line 525.
 (pdftex.def)             Requested size: 206.49722pt x 148.38934pt.
  [16 <./pl1_tot1.jpg> <./pl1_tot2.jpg> <./pl2_tot1.jpg> <./pl2_tot2.jpg>]
 <cosmic_event.png, id=383, 1601.985pt x 1176.395pt>
 File: cosmic_event.png Graphic file (type png)
  <use cosmic_event.png>
-Package pdftex.def Info: cosmic_event.png used on input line 559.
+Package pdftex.def Info: cosmic_event.png used on input line 558.
 (pdftex.def)             Requested size: 430.20639pt x 315.90767pt.
 
 Underfull \vbox (badness 1348) has occurred while \output is active []
@@ -1217,7 +1217,7 @@ Underfull \vbox (badness 1348) has occurred while \output is active []
 File: tot_vs_deltat_log_scale_2D.png Graphic file (type png)
 
 <use tot_vs_deltat_log_scale_2D.png>
-Package pdftex.def Info: tot_vs_deltat_log_scale_2D.png used on input line 580.
+Package pdftex.def Info: tot_vs_deltat_log_scale_2D.png used on input line 579.
 
 (pdftex.def)             Requested size: 185.84624pt x 146.27977pt.
 
@@ -1225,25 +1225,25 @@ Package pdftex.def Info: tot_vs_deltat_log_scale_2D.png used on input line 580.
 File: plane_charge_hist.png Graphic file (type png)
 
 <use plane_charge_hist.png>
-Package pdftex.def Info: plane_charge_hist.png used on input line 587.
+Package pdftex.def Info: plane_charge_hist.png used on input line 586.
 (pdftex.def)             Requested size: 206.49722pt x 148.38934pt.
  [18 <./cosmic_event.png>]
 <ratiodist.png, id=413, 798.985pt x 574.145pt>
 File: ratiodist.png Graphic file (type png)
  <use ratiodist.png>
-Package pdftex.def Info: ratiodist.png used on input line 627.
+Package pdftex.def Info: ratiodist.png used on input line 626.
 (pdftex.def)             Requested size: 193.59155pt x 139.11172pt.
 
 <ratedist.png, id=414, 798.985pt x 574.145pt>
 File: ratedist.png Graphic file (type png)
  <use ratedist.png>
-Package pdftex.def Info: ratedist.png used on input line 634.
+Package pdftex.def Info: ratedist.png used on input line 633.
 (pdftex.def)             Requested size: 193.59155pt x 139.11172pt.
 
 <misalignment.jpg, id=415, 427.1157pt x 414.8298pt>
 File: misalignment.jpg Graphic file (type jpg)
  <use misalignment.jpg>
-Package pdftex.def Info: misalignment.jpg used on input line 642.
+Package pdftex.def Info: misalignment.jpg used on input line 641.
 (pdftex.def)             Requested size: 172.07993pt x 167.13164pt.
 
 [19 <./tot_vs_deltat_log_scale_2D.png> <./plane_charge_hist.png>] [20 <./ratiod
@@ -1251,13 +1251,13 @@ ist.png> <./ratedist.png> <./misalignment.jpg>]
 <ratio1.png, id=439, 1200.485pt x 774.895pt>
 File: ratio1.png Graphic file (type png)
  <use ratio1.png>
-Package pdftex.def Info: ratio1.png used on input line 715.
+Package pdftex.def Info: ratio1.png used on input line 713.
 (pdftex.def)             Requested size: 210.80348pt x 136.06978pt.
 
 <ratio2.png, id=440, 1200.485pt x 774.895pt>
 File: ratio2.png Graphic file (type png)
  <use ratio2.png>
-Package pdftex.def Info: ratio2.png used on input line 721.
+Package pdftex.def Info: ratio2.png used on input line 719.
 (pdftex.def)             Requested size: 210.80348pt x 136.06978pt.
  [21]
 <calibration_charge_distrib_cut.png, id=452, 1200.485pt x 282.05376pt>
@@ -1265,30 +1265,30 @@ File: calibration_charge_distrib_cut.png Graphic file (type png)
 
 <use calibration_charge_distrib_cut.png>
 Package pdftex.def Info: calibration_charge_distrib_cut.png used on input line 
-743.
+741.
 (pdftex.def)             Requested size: 430.20639pt x 101.07445pt.
  [22 <./ratio1.png> <./ratio2.png> <./calibration_charge_distrib_cut.png>] (./E
 MRConstr.bbl [23])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 769.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 767.
  [24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 769.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 767.
 
 (./EMRConstr.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 769.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 769.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 767.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 767.
 Package rerunfilecheck Info: File `EMRConstr.out' has not changed.
 (rerunfilecheck)             Checksum: BB6BDF970AF6D18B47DF68C67BC4B132;1576.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 769.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 767.
  ) 
 Here is how much of TeX's memory you used:
- 9284 strings out of 495029
- 132580 string characters out of 6181524
- 203667 words of memory out of 5000000
- 12075 multiletter control sequences out of 15000+600000
+ 9286 strings out of 495029
+ 132610 string characters out of 6181524
+ 203662 words of memory out of 5000000
+ 12077 multiletter control sequences out of 15000+600000
  97185 words of font info for 174 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,10n,35p,330b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1310,7 +1310,7 @@ e/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on EMRConstr.pdf (25 pages, 9136737 bytes).
+Output written on EMRConstr.pdf (25 pages, 9135031 bytes).
 PDF statistics:
  566 PDF objects out of 1000 (max. 8388607)
  132 named destinations out of 1000 (max. 500000)

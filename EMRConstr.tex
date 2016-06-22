@@ -58,7 +58,7 @@
 
 
 % e-mail addresses: only for the forresponding author
-\emailAdd{first@one.univ}
+\emailAdd{to@be.set}
 
 \abstract{The Electron-Muon Ranger (EMR) is a fully-active tracking-calorimeter installed in the beam line of the Muon Ionization
 Cooling Experiment (MICE). The experiment will demonstrate ionization cooling, an essential technology needed
@@ -101,7 +101,7 @@ matrix and is established as the best facility to discover, and study the possib
 pure and focused neutrino beam ever achieved and is also the first step towards a $\mu^+ \mu^-$ collider~\cite{Neuffer:multitev, Palmer:1996gs}.
 The Neutrino Factory accelerator design uses muons as a neutrino source. A proton beam bombards a target to produce pions. These pions are
 captured and focused in a high-field solenoid channel and decay to muons, creating a low energy muon beam with very large emittance.  The
-emittance of the muons needs to be reduced, i.e the muon beam must be “cooled”, so that the beam can be accelerated efficiently.
+emittance of the muons needs to be reduced, i.e the muon beam must be \textgravedbl cooled\textacutedbl, so that the beam can be accelerated efficiently.
 
 \begin{figure}[htb]
  \includegraphics[width=1.\linewidth]{./ICool.png}
@@ -249,7 +249,7 @@ measured~\cite{PlaDalmau:2005df} with a PMT (25\% quantum efficiency) and it is 
 \end{figure}
 
 The WLS fibre glued inside each bar is a double-cladding 1.2\,mm fibre produced by Saint-Gobain Crystals~\cite{saintgobain}.
-The core material polystyrene with acrylic cladding. It has a larger numerical aperture of 0.58 compared to the 0.2--0.3
+The core material is polystyrene with acrylic cladding. It has a larger numerical aperture of 0.58 compared to the 0.2--0.3
 of graded-index multi-mode fibres used in data communication. Their trapping efficiency is 3.5\,\%. The light is absorbed in the blue part of
 the visible spectrum and re-emitted in green (figure~\ref{qe}, top). 
 
@@ -365,7 +365,7 @@ The architecture of the DBB is organized around a single FPGA\footnote{Altera St
 buffering and data-flow control functions of the board. The internal memory of the FPGA, configured as FIFO, is used to store the event data. Two
 gigabit transceivers\footnote{TLK1501} are interfaced to the FPGA to provide the physical transmission channels and form an upstream command link and
 a downstream data link. Six DBB's are grouped together and daisy-chained with upstream and downstream links via Ethernet cables. The first DBB in each
-group is directly connected to the the VRB via four coaxial cables.
+group is directly connected to the VRB via four coaxial cables.
 
 \subsubsection{VME Configuration Board}
 The VCB is a single FPGA\footnote{Altera Cyclone II (EP2C50F484C8N)} board designed to configure the MAROC chips on the FEBs. The
@@ -391,7 +391,7 @@ the DAQ computer sends a second request which triggers the transfer of this data
 
 A waveform digitizer V1731, made by CAEN~\cite{V1731} is used to read out signals from the single-anode PMTs. The digitizer has a sampling frequency
 of 500\,MHz (2\,ns timing resolution). The pulse shape of the input signal is digitized by an 8-bit ADC and continuously written in a circular memory
-buffer. When a trigger is received the FPGA writes a certain number samples into the buffer, which then is available for readout via the VME bus.
+buffer. When a trigger is received the FPGA writes a certain number of samples into the buffer, which then is available for readout via the VME bus.
 
 \subsection{Mechanics}\label{design:subsec:mechanics}
 
@@ -427,15 +427,14 @@ films, while air conditioning kept the temperature around 25\,\degree C.
 
 The first step in the construction was to glue the wavelength shifting fibres
 into the bars. Transparent epoxy\footnote{Prochima E30 water effect resin} was used to glue the WLS fibre in order to increase the light collection
-efficiency. Although 2832 bars were required for building the full detector, 3150 bars were glued and assembled with fibre connectors in
-order to provide enough spares. Both faces of the bar's fibre connectors were polished with a custom polishing machine. Four
-different grades of sand paper are used to achieve a mirror like quality of the polished surfaces. The last step is performed using a 1\,$\mu$m grade
-diamond-based polishing paper.
+efficiency. Although 2832 bars were required for building the full detector, 3150 bars were glued and assembled with fibre connectors in order to
+provide enough spares. Both faces of the bar's fibre connectors were polished with a custom polishing machine. Four different grades of sand paper
+were used to achieve a mirror like quality of the polished surfaces. The last step is performed using a 1\,$\mu$m grade diamond-based polishing paper.
 
 Fiber bundles made of 60 clear fibres (see figure~\ref{fig:fibre_bundles}) were manufactured. In the bundle, each fibre has an individual length, providing
 a maximum bending radius when connected. A fibre connector (see figure~\ref{fig:fibre_connectors_cad}, bottom right) is glued at one end of each fibre. At
-the other end all fibres are glued either in multi-anode or single-anode PMT connector (see figure~\ref{fig:pmt_connectors}). Once glued, both fibres and
-connectors are polished on a bench, similar to the one used to polish all bar connectors. In total 96 fibre bundles were produced (48 per type of PMTs).
+the other end all fibres were glued either in multi-anode or single-anode PMT connector (see figure~\ref{fig:pmt_connectors}). Once glued, both fibres and
+connectors were polished on a bench, similar to the one used to polish all bar connectors. In total 96 fibre bundles were produced (48 per type of PMTs).
 
 \begin{figure}[htp!]
  \centering
@@ -486,7 +485,7 @@ the relative residual intensities of all 60 channels were above -0.4.
 A separate test bench was set up in order to verify the functionality of the three major components of the EMR electronics: the multi-anode PMTs, the 
 front-end boards and the digitizer-buffer boards. It reproduced the full electronics chain used to readout the detector with the only difference that the
 light was generated by an LED source, powered by a variable amplitude pulser. The LED was attached to the MAPMT injecting light in all channels at the
-same time. The final measurement that is provided by the system is a time-over-threshold of the PMT signal. During the tests this measurement is used as
+same time. The final measurement that is provided by the system is a time-over-threshold (ToT) of the PMT signal. During the tests this measurement is used as
 a figure of merit to characterize the electronics chain (PMT, FEB and DBB). The top of figure~\ref{fig:tot_feb_dbb_test} shows an example of a fully
 functional electronics chain and the bottom an example of a faulty board. Boards exhibiting the former behaviour were accepted for installation in the
 detector.
@@ -550,7 +549,7 @@ of the "Spill" gate signal, used by the MICE DAQ system. A coincidence between t
 as a trigger.
 
 The EMR planes were perpendicular to the ground at the time of this test. Data was taken for 60 hours and yielded $\sim2.23\times10^5$ triggers. The raw
-measurements of the EMR comprise the hit time and time-over-threshold, ToT, for each bar and the integrated plane charge. The two planes used as trigger
+measurements of the EMR comprise the hit time and ToT for each bar and the integrated plane charge. The two planes used as trigger
 did not record a plane charge. The amount of hits recorded in each bar was of order $\sim10^3$.  The test revealed only 5 dead channels ($\sim$0.2\,\% of
 the detector). A typical cosmic event is shown in figure~\ref{fig:cosmic_muon}. 
 
@@ -600,7 +599,7 @@ The EMR is susceptible to two types of crosstalk: optical crosstalk, i.e. a sing
 and anode crosstalk, i.e. a photo-electron leaking from a dynode to an adjacent accelerating structure. An analysis was developed in \cite{emr_xt, Francois}
 to evaluate the significance of this phenomenon.
 
-Cosmic or beam data are poorly suited for this analysis. A real particle often hits two bars or more within each plane which makes it impossible to
+Cosmic or beam data are poorly suited for this analysis. A real particle often hits two bars or more within each plane, which makes it impossible to
 disentangle real signals from crosstalk in neighbouring channels. An LED calibration system is a more reliable tool to drive the analysis. The test channel,
 connected to the LED light source, has four directly adjacent channels: top (N), bottom (S), left (W) and right(E). This method ensures that hits in the
 adjacent channels are caused by crosstalk only.
@@ -670,10 +669,9 @@ sample in order to rid the muon tracks of artificial hits caused by crosstalk an
 ToT measurement (ToT$>$5). Restricting the delay between the trigger time and the hit time to a small interval was used to rid of most of the noise
 (-100$<\Delta t<$-80 ADC counts). 
 
-To reconstruct tracks and calculate
-the distance of each hit from its particle trail, the hits were
+To reconstruct tracks and calculate the distance of each hit from its particle trail, the hits were
 split into two projections $qz$, $q=x,y$. The plane ID of the channel hit provides the $z$ coordinate and the bar ID provides either the $x$ or $y$ coordinates,
-depending on the plane orientation. The $(q_i,z_i)$ coordinates were those of the barycentre of the triangular section or the bar corresponding to the hit. For
+depending on the plane orientation. The $(q_i,z_i)$ coordinates were those of the barycentre of the triangular section of the bar corresponding to the hit. For
 a linear fit $q=a_qz+b_q$, the absolute distance between a hit $(q_i,z_i)$ and the track within a plane reads $\Delta q_i=|q_i-(a_qz_i+b_q)|$. For intuitiveness,
 distances are expressed in bar units ($\mathrm{b.u.}$) in the following developments. A $\mathrm{b.u.}$ corresponds to the height of the triangular section or
 equivalently to the half width of its base.
@@ -707,7 +705,7 @@ The mismatch ratio for adjacent bars was measured and is represented for each ch
 to it in log scale. The bulk of the distribution is centred around 28.88\,\%, consistent with the weighted average of the theoretical predictions for the two
 projections. Bars 47  and 48 of plane 44 record a ratio of 62.5 $\pm$ 3.5\,\% and 57.2 $\pm$ 3.2\,\%, respectively, significantly superior to the bulk and in
 agreement with the prediction. Their proximity to each other corroborates the hypothesis of a channel swap. The mismatch is fixed at the level of the channel
-map in the reconstruction.
+map in the reconstruction software.
 
 \begin{figure}[htr!]
   \begin{minipage}[b]{.49\textwidth}
@@ -760,7 +758,7 @@ MICE muon beam that exceeds 99.8\%.
 
 \section*{Acknowledgement}
 The work described here was made possible by grants from Swiss National Science Foundation, in the framework of the SCOPES programme and the European
-Community under the European Commission Framework Programme 7 (AIDA project, grant agreement no. 262025. We gratefully acknowledge all sources of support.
+Community under the European Commission Framework Programme 7 (AIDA project, grant agreement no. 262025). We gratefully acknowledge all sources of support.
 
 
 \bibliographystyle{unsrt}
